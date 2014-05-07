@@ -153,17 +153,15 @@
 
 
 @implementation ColorSlider {
-	CCNode *_node;
 	CCNodeGradient *_gradient;
 }
 
--(id)initWithNode:(CCNode *)node
+-(id)init
 {
 	CCSpriteFrame *bg = [CCSpriteFrame frameWithImageNamed:@"slider-background.png"];
 	CCSpriteFrame *handle = [CCSpriteFrame frameWithImageNamed:@"slider-handle.png"];
 	
 	if((self = [super initWithBackground:bg andHandleImage:handle])){
-		_node = node;
 		self.startColor = [CCColor whiteColor];
 		self.endColor = [CCColor blackColor];
 		
@@ -181,7 +179,7 @@
 
 -(void)callback:(CCSlider *)slider
 {
-	_node.color = [_startColor interpolateTo:_endColor alpha:self.sliderValue];
+	if(_colorBlock) _colorBlock([_startColor interpolateTo:_endColor alpha:self.sliderValue]);
 }
 
 -(void)setStartColor:(CCColor *)startColor
@@ -190,6 +188,7 @@
 	[self callback:self];
 	
 	_gradient.startColor = startColor;
+	_gradient.startOpacity = startColor.alpha;
 }
 
 -(void)setEndColor:(CCColor *)endColor
@@ -198,6 +197,13 @@
 	[self callback:self];
 	
 	_gradient.endColor = endColor;
+	_gradient.endOpacity = endColor.alpha;
+}
+
+-(void)setColorBlock:(void (^)(CCColor *))colorBlock
+{
+	_colorBlock = colorBlock;
+	[self callback:self];
 }
 
 @end

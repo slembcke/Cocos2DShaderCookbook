@@ -24,8 +24,7 @@
 
 @interface ColorSlider : CCSlider
 
-@property(nonatomic) CCColor *startColor, *endColor;
-
--(id)initWithNode:(CCNode *)node;
+@property(nonatomic, strong) CCColor *startColor, *endColor;
+@property(nonatomic, copy) void (^colorBlock)(CCColor *color);
 
 @end
