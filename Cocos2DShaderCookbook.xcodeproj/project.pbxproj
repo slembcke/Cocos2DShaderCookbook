@@ -10,6 +10,13 @@
 		D32754F4191A94EC00865098 /* E08_Outline.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F2191A94EC00865098 /* E08_Outline.fsh */; };
 		D32754F5191A94EC00865098 /* E08_Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = D32754F3191A94EC00865098 /* E08_Outline.m */; };
 		D32754F8191A973D00865098 /* E08_Outline.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F7191A973D00865098 /* E08_Outline.vsh */; };
+		753B79F9191A89800034A6D5 /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 753B79F8191A89800034A6D5 /* TODO.txt */; };
+		753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */; };
+		753B79FD191A8D970034A6D5 /* E11_PixelBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */; };
+		753B79FF191A8E310034A6D5 /* gaussianBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FE191A8E310034A6D5 /* gaussianBlur.png */; };
+		753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */; };
+		753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */; };
+		753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -88,6 +95,13 @@
 		D32754F2191A94EC00865098 /* E08_Outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.fsh; sourceTree = "<group>"; };
 		D32754F3191A94EC00865098 /* E08_Outline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E08_Outline.m; sourceTree = "<group>"; };
 		D32754F7191A973D00865098 /* E08_Outline.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.vsh; sourceTree = "<group>"; };
+		753B79F8191A89800034A6D5 /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
+		753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.fsh; sourceTree = "<group>"; };
+		753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E11_PixelBlur.m; sourceTree = "<group>"; };
+		753B79FE191A8E310034A6D5 /* gaussianBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaussianBlur.png; sourceTree = "<group>"; };
+		753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.vsh; sourceTree = "<group>"; };
+		753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E12_ColorMatrix.m; sourceTree = "<group>"; };
+		753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E12_ColorMatrix.fsh; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -175,10 +189,11 @@
 		D3EF46EC1919997E003E8B91 = {
 			isa = PBXGroup;
 			children = (
-				D3EF496619199D82003E8B91 /* cocos2d-ios.xcodeproj */,
+				753B79F8191A89800034A6D5 /* TODO.txt */,
 				D3EF47121919997E003E8B91 /* Cookbook */,
 				D3EF46F71919997E003E8B91 /* Frameworks */,
 				D3EF46F61919997E003E8B91 /* Products */,
+				D3EF496619199D82003E8B91 /* cocos2d-ios.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};
@@ -221,6 +236,7 @@
 		D3EF47131919997E003E8B91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				753B79FE191A8E310034A6D5 /* gaussianBlur.png */,
 				D3EF49811919AE7D003E8B91 /* Interface-ipad.plist */,
 				D3EF49821919AE7D003E8B91 /* Interface-ipad.png */,
 				D3EF49831919AE7D003E8B91 /* Interface-ipadhd.plist */,
@@ -309,6 +325,11 @@
 				D32754F3191A94EC00865098 /* E08_Outline.m */,
 				D32754F7191A973D00865098 /* E08_Outline.vsh */,
 				D32754F2191A94EC00865098 /* E08_Outline.fsh */,
+				753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */,
+				753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */,
+				753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */,
+				753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */,
+				753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -382,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3EF47171919997E003E8B91 /* Default@2x.png in Resources */,
+				753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */,
 				D3EF472A1919997E003E8B91 /* Icon-120.png in Resources */,
 				D3EF49901919AE7D003E8B91 /* slider-handle-ipadhd.png in Resources */,
 				D3EFD7031919DFA600EA8874 /* E05_Chromatic.fsh in Resources */,
@@ -390,7 +412,9 @@
 				D3EF498E1919AE7D003E8B91 /* slider-background-ipadhd.png in Resources */,
 				D3EF47321919997E003E8B91 /* Icon-Small@2x.png in Resources */,
 				D3EF47241919997E003E8B91 /* Icon-72@2x.png in Resources */,
+				753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */,
 				D3EF47151919997E003E8B91 /* Default.png in Resources */,
+				753B79FF191A8E310034A6D5 /* gaussianBlur.png in Resources */,
 				D3EF498C1919AE7D003E8B91 /* Interface-ipadhd.png in Resources */,
 				D3EF471E1919997E003E8B91 /* Icon.png in Resources */,
 				D3EF49931919BE55003E8B91 /* E03_SpriteDistort.fsh in Resources */,
@@ -408,6 +432,8 @@
 				D3EF47191919997E003E8B91 /* Default-568h@2x.png in Resources */,
 				D3EF49771919A222003E8B91 /* Logo-ipadhd.png in Resources */,
 				D3EF47341919997E003E8B91 /* Icon-Spotlight-iOS7.png in Resources */,
+				753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */,
+				753B79F9191A89800034A6D5 /* TODO.txt in Resources */,
 				D3EF498F1919AE7D003E8B91 /* slider-handle-ipad.png in Resources */,
 				D3EF47281919997E003E8B91 /* Icon-76@2x.png in Resources */,
 				D3EFD7061919E51800EA8874 /* E06_Shadow.fsh in Resources */,
@@ -427,12 +453,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				753B79FD191A8D970034A6D5 /* E11_PixelBlur.m in Sources */,
 				D3EFD6F81919DA1700EA8874 /* E04_Grayscale.m in Sources */,
 				D3EF49801919ABCB003E8B91 /* E02_SpriteColor.m in Sources */,
 				D3EF49941919BE55003E8B91 /* E03_SpriteDistort.m in Sources */,
 				D3EF494A19199980003E8B91 /* main.m in Sources */,
 				D3EF495F19199B09003E8B91 /* E01_SimplestShader.m in Sources */,
 				D3EFD70B1919F89C00EA8874 /* E07_ColorFlash.m in Sources */,
+				753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */,
 				D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */,
 				D3EFD7001919DFA100EA8874 /* E05_Chromatic.m in Sources */,
 				D32754F5191A94EC00865098 /* E08_Outline.m in Sources */,
