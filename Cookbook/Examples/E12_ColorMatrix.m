@@ -2,57 +2,106 @@
 #import "CCTextureCache.h"
 #import "CCTexture_Private.h"
 
-#define EXAMPLENAME E11_PixelBlur
+#define EXAMPLENAME E12_ColorMatrix
 
 @interface EXAMPLENAME : ExampleBase @end
 @implementation EXAMPLENAME
 
+
+
+float colorRotation = 0.0f;
+float colorScale = 1.0f;
+float saturationAdjustment = 1.0f;
+CCSprite *sprite;
+
 -(CCNode *)exampleContent
 {
-	CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
+	sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 
-	// Load the distortion texture, a noise texture which we use to determine how to offset individual fragments when we draw them.
-	CCTexture* distortion = [[CCTextureCache sharedTextureCache] addImage:@"gaussianBlur.png"];
-	// Nearest neighboor interpolating to create a pixely effect out of the distortion texture.
-	ccTexParams params = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
-	[distortion setTexParameters:&params];
+	sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:GLKMatrix4Identity];
 	
-	sprite.shaderUniforms[@"u_DistortionTexture"] = distortion;
-	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the image.
-	sprite.shaderUniforms[@"u_mainTextureSize"] = [NSValue valueWithCGSize:distortion.contentSizeInPixels];
-
-	ColorSlider *distortionSlider = [ColorSlider node];
-	distortionSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	distortionSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	distortionSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_DistortionSize"] = [NSNumber numberWithFloat:color.red *0.1f];};
-	
-	ColorSlider *animationSlider = [ColorSlider node];
-	animationSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	animationSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	// Round the number so it's on or off. 0 will disable the animation, 1 will enable it.
-	animationSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_AnimationEnabled"] = [NSNumber numberWithFloat: roundf(color.red)];};
-	
-	ColorSlider *blockSizeSlider = [ColorSlider node];
-	blockSizeSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	blockSizeSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	blockSizeSlider.colorBlock = ^(CCColor *color){
-		sprite.shaderUniforms[@"u_BlockSize"] = [NSNumber numberWithFloat:color.red];
+	ColorSlider *hueRotation = [ColorSlider node];
+	hueRotation.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	hueRotation.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	hueRotation.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
+	hueRotation.colorBlock = ^(CCColor *color){
+		colorRotation = color.red * M_PI * 2.0;
+		[self updateColors];
 	};
 	
+	ColorSlider *colorScaleSlider = [ColorSlider node];
+	colorScaleSlider.sliderValue = 0.5f;
+	colorScaleSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	colorScaleSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	colorScaleSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
+	colorScaleSlider.colorBlock = ^(CCColor *color){
+		colorScale = color.red * 2.0;
+		[self updateColors];
+	};
+	
+	
+	ColorSlider *luminanceSlider = [ColorSlider node];
+	luminanceSlider.sliderValue = 0.5f;
+	luminanceSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	luminanceSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	luminanceSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
+	luminanceSlider.colorBlock = ^(CCColor *color){
+		saturationAdjustment = color.red * 2.0;
+		[self updateColors];
+	};
 	
 	CCLayoutBox *content = [CCLayoutBox node];
 	content.anchorPoint = ccp(0.5, 0.5);
 	content.direction = CCLayoutBoxDirectionVertical;
 	
-	[content addChild:blockSizeSlider];
-	[content addChild:animationSlider];
-	[content addChild:distortionSlider];
+	[content addChild:luminanceSlider];
+	[content addChild:colorScaleSlider];
+	[content addChild:hueRotation];
 	[content addChild:sprite];
 	
-	
-	
 	return content;
+}
+
+-(void) updateColors
+{
+
+	// For a nice guide on image manipulation using matricies, see:
+	// http://www.graficaobscura.com/matrix/
+	// There's probably a lot more you could do, but here are some simple examples.
+	
+	GLKMatrix4  colorMatrix = GLKMatrix4Identity;
+	// Multiply in the color rotation matrix, for hue rotation.
+	colorMatrix = GLKMatrix4Rotate(colorMatrix, colorRotation, 1, 1, 1);
+
+	// Brightness adjustments are defined as a scale operation.
+	colorMatrix = GLKMatrix4Scale(colorMatrix, colorScale, colorScale, colorScale);
+	
+	// Adjust Saturation:
+	colorMatrix = GLKMatrix4Multiply(colorMatrix, GLKMatrix4MakeSaturation(saturationAdjustment));
+	
+	sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:colorMatrix];
+}
+
+/*
+ * Adjust the saturation. Good values for s range from zero (convert to 
+ * black and white), to 1.0 (no change), and up (for oversaturation)
+ */
+GLKMatrix4 GLKMatrix4MakeSaturation(float s)
+{
+	// These are some luminance values defined by the gamma.
+	float rwgt = 0.3086;
+	float gwgt = 0.6094;
+	float bwgt = 0.0820;
+	// Calculate coefficients.
+	float red = (1.0 - s)*rwgt;
+	float blue = (1.0 - s)*bwgt;
+	float green = (1.0 - s)*gwgt;
+	// Adding "s" serves as a scale term.
+	return GLKMatrix4MakeAndTranspose(red + s,	red,				red,				0,
+																		blue,			blue + s,		blue,				0,
+																		green,		green,			green + s,	0,
+																		0,				0,					0,					1);
 }
 
 @end
