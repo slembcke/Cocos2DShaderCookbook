@@ -13,7 +13,7 @@
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 
 	// Load the distortion texture, a noise texture which we use to determine how to offset individual fragments when we draw them.
-	CCTexture* distortion = [[CCTextureCache sharedTextureCache] addImage:@"gaussianBlur.png"];
+	CCTexture* distortion = [[CCTextureCache sharedTextureCache] addImage:@"gaussianNoise.png"];
 	// Nearest neighboor interpolating to create a pixely effect out of the distortion texture.
 	ccTexParams params = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
 	[distortion setTexParameters:&params];

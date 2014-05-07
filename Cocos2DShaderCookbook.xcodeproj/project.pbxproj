@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D32754F4191A94EC00865098 /* E08_Outline.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F2191A94EC00865098 /* E08_Outline.fsh */; };
-		D32754F5191A94EC00865098 /* E08_Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = D32754F3191A94EC00865098 /* E08_Outline.m */; };
-		D32754F8191A973D00865098 /* E08_Outline.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F7191A973D00865098 /* E08_Outline.vsh */; };
 		753B79F9191A89800034A6D5 /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 753B79F8191A89800034A6D5 /* TODO.txt */; };
 		753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */; };
 		753B79FD191A8D970034A6D5 /* E11_PixelBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */; };
-		753B79FF191A8E310034A6D5 /* gaussianBlur.png in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FE191A8E310034A6D5 /* gaussianBlur.png */; };
 		753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */; };
 		753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */; };
 		753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */; };
+		D32754F4191A94EC00865098 /* E08_Outline.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F2191A94EC00865098 /* E08_Outline.fsh */; };
+		D32754F5191A94EC00865098 /* E08_Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = D32754F3191A94EC00865098 /* E08_Outline.m */; };
+		D32754F8191A973D00865098 /* E08_Outline.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F7191A973D00865098 /* E08_Outline.vsh */; };
+		D32754FD191ADE0E00865098 /* gaussianNoise.png in Resources */ = {isa = PBXBuildFile; fileRef = D32754FC191ADE0E00865098 /* gaussianNoise.png */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -92,16 +92,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D32754F2191A94EC00865098 /* E08_Outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.fsh; sourceTree = "<group>"; };
-		D32754F3191A94EC00865098 /* E08_Outline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E08_Outline.m; sourceTree = "<group>"; };
-		D32754F7191A973D00865098 /* E08_Outline.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.vsh; sourceTree = "<group>"; };
 		753B79F8191A89800034A6D5 /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
 		753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.fsh; sourceTree = "<group>"; };
 		753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E11_PixelBlur.m; sourceTree = "<group>"; };
-		753B79FE191A8E310034A6D5 /* gaussianBlur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gaussianBlur.png; sourceTree = "<group>"; };
 		753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.vsh; sourceTree = "<group>"; };
 		753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E12_ColorMatrix.m; sourceTree = "<group>"; };
 		753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E12_ColorMatrix.fsh; sourceTree = "<group>"; };
+		D32754F2191A94EC00865098 /* E08_Outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.fsh; sourceTree = "<group>"; };
+		D32754F3191A94EC00865098 /* E08_Outline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E08_Outline.m; sourceTree = "<group>"; };
+		D32754F7191A973D00865098 /* E08_Outline.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.vsh; sourceTree = "<group>"; };
+		D32754FC191ADE0E00865098 /* gaussianNoise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gaussianNoise.png; path = Resources/gaussianNoise.png; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -236,7 +236,7 @@
 		D3EF47131919997E003E8B91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				753B79FE191A8E310034A6D5 /* gaussianBlur.png */,
+				D32754FC191ADE0E00865098 /* gaussianNoise.png */,
 				D3EF49811919AE7D003E8B91 /* Interface-ipad.plist */,
 				D3EF49821919AE7D003E8B91 /* Interface-ipad.png */,
 				D3EF49831919AE7D003E8B91 /* Interface-ipadhd.plist */,
@@ -410,11 +410,11 @@
 				D3EF49891919AE7D003E8B91 /* Interface-ipad.plist in Resources */,
 				D3EF47201919997E003E8B91 /* Icon@2x.png in Resources */,
 				D3EF498E1919AE7D003E8B91 /* slider-background-ipadhd.png in Resources */,
+				D32754FD191ADE0E00865098 /* gaussianNoise.png in Resources */,
 				D3EF47321919997E003E8B91 /* Icon-Small@2x.png in Resources */,
 				D3EF47241919997E003E8B91 /* Icon-72@2x.png in Resources */,
 				753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */,
 				D3EF47151919997E003E8B91 /* Default.png in Resources */,
-				753B79FF191A8E310034A6D5 /* gaussianBlur.png in Resources */,
 				D3EF498C1919AE7D003E8B91 /* Interface-ipadhd.png in Resources */,
 				D3EF471E1919997E003E8B91 /* Icon.png in Resources */,
 				D3EF49931919BE55003E8B91 /* E03_SpriteDistort.fsh in Resources */,
@@ -546,6 +546,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Cocos2DShaderCookbook;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -572,6 +573,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Cocos2DShaderCookbook;
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
