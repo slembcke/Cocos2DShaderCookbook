@@ -14,6 +14,8 @@
 		753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */; };
 		753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */; };
 		753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */; };
+		753B7A0A191AD9710034A6D5 /* E13_MotionBlur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */; };
+		753B7A0B191AD9710034A6D5 /* E13_MotionBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B7A09191AD9710034A6D5 /* E13_MotionBlur.m */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -96,6 +98,8 @@
 		753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.vsh; sourceTree = "<group>"; };
 		753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E12_ColorMatrix.m; sourceTree = "<group>"; };
 		753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E12_ColorMatrix.fsh; sourceTree = "<group>"; };
+		753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E13_MotionBlur.fsh; sourceTree = "<group>"; };
+		753B7A09191AD9710034A6D5 /* E13_MotionBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E13_MotionBlur.m; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -316,11 +320,13 @@
 				D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */,
 				D3EFD7091919F89C00EA8874 /* E07_ColorFlash.m */,
 				D3EFD7081919F89C00EA8874 /* E07_ColorFlash.fsh */,
+				753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */,
 				753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */,
 				753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */,
-				753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */,
 				753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */,
 				753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */,
+				753B7A09191AD9710034A6D5 /* E13_MotionBlur.m */,
+				753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -429,6 +435,7 @@
 				D3EF49761919A222003E8B91 /* Logo-ipad.png in Resources */,
 				D3EFD70A1919F89C00EA8874 /* E07_ColorFlash.fsh in Resources */,
 				D3EF498A1919AE7D003E8B91 /* Interface-ipad.png in Resources */,
+				753B7A0A191AD9710034A6D5 /* E13_MotionBlur.fsh in Resources */,
 				D3EF498D1919AE7D003E8B91 /* slider-background-ipad.png in Resources */,
 				D3EF47361919997E003E8B91 /* Icon-Spotlight-iOS7@2x.png in Resources */,
 				D3EF47261919997E003E8B91 /* Icon-76.png in Resources */,
@@ -448,6 +455,7 @@
 				D3EF49941919BE55003E8B91 /* E03_SpriteDistort.m in Sources */,
 				D3EF494A19199980003E8B91 /* main.m in Sources */,
 				D3EF495F19199B09003E8B91 /* E01_SimplestShader.m in Sources */,
+				753B7A0B191AD9710034A6D5 /* E13_MotionBlur.m in Sources */,
 				D3EFD70B1919F89C00EA8874 /* E07_ColorFlash.m in Sources */,
 				753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */,
 				D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */,
