@@ -14,13 +14,14 @@
 -(CCNode *)exampleContent
 {
 	
-	_blurStrength = 10000.0;
+	_blurStrength = 50.0;
 	
 	_sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	_sprite.shader = [CCShader shaderNamed:self.shaderName];
 	
 
-	
+	// TODO: If you add the _sprite (and slider) to content node, the _sprite no longer moves.
+	/*
 	ColorSlider *blurStrengthSlider = [ColorSlider node];
 	blurStrengthSlider.sliderValue = 0.5f;
 	blurStrengthSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
@@ -36,8 +37,9 @@
 	
 	[content addChild:blurStrengthSlider];
 	[content addChild:_sprite];
+	 */
 	
-	return content;
+	return _sprite;
 }
 
 -(void)update:(CCTime)delta
@@ -52,7 +54,13 @@
 	// To find the amount we moved this frame, we can subtract our new position from the previous position...
 	CGPoint blurVector = ccpSub(_sprite.position, previousPosition);
 	
-	CGPoint p = CGPointMake(blurVector.x / _sprite.texture.contentSize.width * _blurStrength, blurVector.y / _sprite.texture.contentSize.height * _blurStrength);
+	// Cocos2D flips the y axis.
+	blurVector.y = -blurVector.y;
+
+	// Divide by the delta time to avoid inconsistent trail lengths when framerate is inconsistent. And multiply by blur strength.s
+	blurVector = CGPointMake(blurVector.x / delta * _blurStrength, blurVector.y / delta * _blurStrength);
+	
+	CGPoint p = CGPointMake(blurVector.x / _sprite.texture.contentSize.width, blurVector.y / _sprite.texture.contentSize.height);
 	_sprite.shaderUniforms[@"u_BlurVector"] = [NSValue valueWithCGPoint:p];
 }
 
