@@ -36,8 +36,35 @@
 		CCLabelTTF *exampleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:36];
 		exampleLabel.color = [CCColor blackColor];
 		exampleLabel.positionType = CCPositionTypeNormalized;
-		exampleLabel.position = ccp(0.5, 0.9);
+		exampleLabel.position = ccp(0.1, 0.9);
+		exampleLabel.anchorPoint = ccp(0.0, 0.5);
 		[self addChild:exampleLabel];
+		
+		// Nav buttons
+		{
+			CCButton *back = [CCButton buttonWithTitle:@"Back"];
+			back.color = [CCColor blackColor];
+			[back setTarget:self selector:@selector(back:)];
+			
+			CCButton *prev = [CCButton buttonWithTitle:@"Prev"];
+			prev.color = [CCColor blackColor];
+			[prev setTarget:self selector:@selector(prev:)];
+			
+			CCButton *next = [CCButton buttonWithTitle:@"Next"];
+			next.color = [CCColor blackColor];
+			[next setTarget:self selector:@selector(next:)];
+			
+			CCLayoutBox *buttons = [CCLayoutBox node];
+			buttons.spacing = 10.0;
+			buttons.anchorPoint = ccp(1.0, 0.5);
+			buttons.positionType = CCPositionTypeNormalized;
+			buttons.position = ccp(0.9, 0.9);
+			
+//			[buttons addChild:back];
+			[buttons addChild:prev];
+			[buttons addChild:next];
+			[self addChild:buttons];
+		}
 		
 		_exampleContent = self.exampleContent;
 		_exampleContent.positionType = CCPositionTypeNormalized;
@@ -53,6 +80,28 @@
 	}
 	
 	return self;
+}
+
+-(void)back:(CCButton *)sender
+{
+}
+
+-(void)prev:(CCButton *)sender
+{
+	NSArray *examples = [ExampleBase examples];
+	NSUInteger index = [examples indexOfObject:self.class];
+	
+	Class klass = examples[(index - 1 + examples.count)%examples.count];
+	[[CCDirector sharedDirector] replaceScene:[klass scene]];
+}
+
+-(void)next:(CCButton *)sender
+{
+	NSArray *examples = [ExampleBase examples];
+	NSUInteger index = [examples indexOfObject:self.class];
+	
+	Class klass = examples[(index + 1 + examples.count)%examples.count];
+	[[CCDirector sharedDirector] replaceScene:[klass scene]];
 }
 
 -(void)update:(CCTime)delta
