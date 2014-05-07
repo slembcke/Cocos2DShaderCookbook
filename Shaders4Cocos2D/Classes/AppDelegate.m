@@ -39,7 +39,7 @@
 -(CCScene *)startScene
 {
 	// This method should return the very first scene to be run when your app starts.
-	return [(ExampleBase *)ExampleBase.examples[1] scene];
+	return [(ExampleBase *)ExampleBase.examples.lastObject scene];
 }
 
 @end

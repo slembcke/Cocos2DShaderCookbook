@@ -33,6 +33,12 @@
 	if((self = [super init])){
 		self.color = [CCColor whiteColor];
 		
+		CCLabelTTF *exampleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:36];
+		exampleLabel.color = [CCColor blackColor];
+		exampleLabel.positionType = CCPositionTypeNormalized;
+		exampleLabel.position = ccp(0.5, 0.9);
+		[self addChild:exampleLabel];
+		
 		_exampleContent = self.exampleContent;
 		_exampleContent.positionType = CCPositionTypeNormalized;
 		_exampleContent.position = ccp(5.0/6.0, 0.5);
@@ -47,6 +53,16 @@
 	}
 	
 	return self;
+}
+
+-(void)update:(CCTime)delta
+{
+	_time += delta;
+}
+
+-(NSString *)exampleName
+{
+	return NSStringFromClass(self.class);
 }
 
 -(CCNode *)exampleContent

@@ -13,7 +13,7 @@
 	slider.positionType = CCPositionTypeNormalized;
 	slider.position = ccp(0.5, 0.25);
 	slider.anchorPoint = ccp(0.5, 0.5);
-	slider.preferredSize = CGSizeMake(200, 32);
+	slider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
 	slider.endColor = [CCColor magentaColor];
 	
 	CCLayoutBox *content = [CCLayoutBox node];

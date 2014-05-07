@@ -1,0 +1,17 @@
+* Tableview of examples
+* Prev/next/back buttons.
+
+Example ideas:
+* Outline
+* Static shader (vertex shader)
+* Color replacement
+* Color matrix
+* Water distortion
+* Pixel blur
+* Motion blur
+* Flag ripples
+* Normal mapped lighting
+* CLUT
+* Anti-aliased circle
+* SDF shader
+* Scanlines

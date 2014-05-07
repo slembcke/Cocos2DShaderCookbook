@@ -11,10 +11,13 @@
 
 +(instancetype)scene;
 
--(NSString *)shaderName;
+@property(nonatomic, readonly) NSString *exampleName;
 
--(CCNode *)exampleContent;
--(CCLabelTTF *)sourceLabel;
+@property(nonatomic, readonly) NSString *shaderName;
+@property(nonatomic, readonly) CCTime time;
+
+@property(nonatomic, readonly) CCNode *exampleContent;
+@property(nonatomic, readonly) CCLabelTTF *sourceLabel;
 
 @end
 

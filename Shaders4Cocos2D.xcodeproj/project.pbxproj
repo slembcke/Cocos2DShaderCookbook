@@ -54,6 +54,12 @@
 		D3EF49931919BE55003E8B91 /* E03_SpriteDistort.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3EF49911919BE55003E8B91 /* E03_SpriteDistort.fsh */; };
 		D3EF49941919BE55003E8B91 /* E03_SpriteDistort.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EF49921919BE55003E8B91 /* E03_SpriteDistort.m */; };
 		D3EF49971919C543003E8B91 /* ExampleBase.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EF49961919C543003E8B91 /* ExampleBase.m */; };
+		D3EFD6F71919DA1700EA8874 /* E04_Grayscale.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD6F51919DA1700EA8874 /* E04_Grayscale.fsh */; };
+		D3EFD6F81919DA1700EA8874 /* E04_Grayscale.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD6F61919DA1700EA8874 /* E04_Grayscale.m */; };
+		D3EFD7001919DFA100EA8874 /* E05_Chromatic.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD6FF1919DFA100EA8874 /* E05_Chromatic.m */; };
+		D3EFD7031919DFA600EA8874 /* E05_Chromatic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD7021919DFA600EA8874 /* E05_Chromatic.fsh */; };
+		D3EFD7061919E51800EA8874 /* E06_Shadow.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */; };
+		D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = D3EFD7051919E51800EA8874 /* E06_Shadow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +132,12 @@
 		D3EF49921919BE55003E8B91 /* E03_SpriteDistort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E03_SpriteDistort.m; sourceTree = "<group>"; };
 		D3EF49951919C543003E8B91 /* ExampleBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExampleBase.h; path = Classes/ExampleBase.h; sourceTree = "<group>"; };
 		D3EF49961919C543003E8B91 /* ExampleBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ExampleBase.m; path = Classes/ExampleBase.m; sourceTree = "<group>"; };
+		D3EFD6F51919DA1700EA8874 /* E04_Grayscale.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E04_Grayscale.fsh; sourceTree = "<group>"; };
+		D3EFD6F61919DA1700EA8874 /* E04_Grayscale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E04_Grayscale.m; sourceTree = "<group>"; };
+		D3EFD6FF1919DFA100EA8874 /* E05_Chromatic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E05_Chromatic.m; sourceTree = "<group>"; };
+		D3EFD7021919DFA600EA8874 /* E05_Chromatic.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E05_Chromatic.fsh; sourceTree = "<group>"; };
+		D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E06_Shadow.fsh; sourceTree = "<group>"; };
+		D3EFD7051919E51800EA8874 /* E06_Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E06_Shadow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -276,6 +288,12 @@
 				D3EF497D1919ABCB003E8B91 /* E02_SpriteColor.fsh */,
 				D3EF49921919BE55003E8B91 /* E03_SpriteDistort.m */,
 				D3EF49911919BE55003E8B91 /* E03_SpriteDistort.fsh */,
+				D3EFD6F61919DA1700EA8874 /* E04_Grayscale.m */,
+				D3EFD6F51919DA1700EA8874 /* E04_Grayscale.fsh */,
+				D3EFD6FF1919DFA100EA8874 /* E05_Chromatic.m */,
+				D3EFD7021919DFA600EA8874 /* E05_Chromatic.fsh */,
+				D3EFD7051919E51800EA8874 /* E06_Shadow.m */,
+				D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -351,6 +369,7 @@
 				D3EF47171919997E003E8B91 /* Default@2x.png in Resources */,
 				D3EF472A1919997E003E8B91 /* Icon-120.png in Resources */,
 				D3EF49901919AE7D003E8B91 /* slider-handle-ipadhd.png in Resources */,
+				D3EFD7031919DFA600EA8874 /* E05_Chromatic.fsh in Resources */,
 				D3EF49891919AE7D003E8B91 /* Interface-ipad.plist in Resources */,
 				D3EF47201919997E003E8B91 /* Icon@2x.png in Resources */,
 				D3EF498E1919AE7D003E8B91 /* slider-background-ipadhd.png in Resources */,
@@ -365,6 +384,7 @@
 				D3EF471B1919997E003E8B91 /* Default-Landscape~ipad.png in Resources */,
 				D3EF47301919997E003E8B91 /* Icon-Small.png in Resources */,
 				D3EF497F1919ABCB003E8B91 /* E02_SpriteColor.fsh in Resources */,
+				D3EFD6F71919DA1700EA8874 /* E04_Grayscale.fsh in Resources */,
 				D3EF472E1919997E003E8B91 /* Icon-Small-50.png in Resources */,
 				D3EF498B1919AE7D003E8B91 /* Interface-ipadhd.plist in Resources */,
 				D3EF47221919997E003E8B91 /* Icon-72.png in Resources */,
@@ -373,6 +393,7 @@
 				D3EF47341919997E003E8B91 /* Icon-Spotlight-iOS7.png in Resources */,
 				D3EF498F1919AE7D003E8B91 /* slider-handle-ipad.png in Resources */,
 				D3EF47281919997E003E8B91 /* Icon-76@2x.png in Resources */,
+				D3EFD7061919E51800EA8874 /* E06_Shadow.fsh in Resources */,
 				D3EF49761919A222003E8B91 /* Logo-ipad.png in Resources */,
 				D3EF498A1919AE7D003E8B91 /* Interface-ipad.png in Resources */,
 				D3EF498D1919AE7D003E8B91 /* slider-background-ipad.png in Resources */,
@@ -388,10 +409,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3EFD6F81919DA1700EA8874 /* E04_Grayscale.m in Sources */,
 				D3EF49801919ABCB003E8B91 /* E02_SpriteColor.m in Sources */,
 				D3EF49941919BE55003E8B91 /* E03_SpriteDistort.m in Sources */,
 				D3EF494A19199980003E8B91 /* main.m in Sources */,
 				D3EF495F19199B09003E8B91 /* E01_SimplestShader.m in Sources */,
+				D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */,
+				D3EFD7001919DFA100EA8874 /* E05_Chromatic.m in Sources */,
 				D3EF494E19199980003E8B91 /* AppDelegate.m in Sources */,
 				D3EF49971919C543003E8B91 /* ExampleBase.m in Sources */,
 			);
