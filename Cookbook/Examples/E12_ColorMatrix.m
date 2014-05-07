@@ -6,48 +6,47 @@
 
 @interface EXAMPLENAME : ExampleBase @end
 @implementation EXAMPLENAME
-
-
-
-float colorRotation = 0.0f;
-float colorScale = 1.0f;
-float saturationAdjustment = 1.0f;
-CCSprite *sprite;
+{
+	float _colorRotation = 0.0f;
+	float _colorScale = 1.0f;
+	float _saturationAdjustment = 1.0f;
+	CCSprite *_sprite;
+}
 
 -(CCNode *)exampleContent
 {
-	sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
-	sprite.shader = [CCShader shaderNamed:self.shaderName];
+	_sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
+	_sprite.shader = [CCShader shaderNamed:self.shaderName];
 
-	sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:GLKMatrix4Identity];
+	_sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:GLKMatrix4Identity];
 	
 	ColorSlider *hueRotation = [ColorSlider node];
-	hueRotation.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	hueRotation.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
 	hueRotation.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
 	hueRotation.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
 	hueRotation.colorBlock = ^(CCColor *color){
-		colorRotation = color.red * M_PI * 2.0;
+		_colorRotation = color.red * M_PI * 2.0;
 		[self updateColors];
 	};
 	
 	ColorSlider *colorScaleSlider = [ColorSlider node];
 	colorScaleSlider.sliderValue = 0.5f;
-	colorScaleSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	colorScaleSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
 	colorScaleSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
 	colorScaleSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
 	colorScaleSlider.colorBlock = ^(CCColor *color){
-		colorScale = color.red * 2.0;
+		_colorScale = color.red * 2.0;
 		[self updateColors];
 	};
 	
 	
 	ColorSlider *luminanceSlider = [ColorSlider node];
 	luminanceSlider.sliderValue = 0.5f;
-	luminanceSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	luminanceSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
 	luminanceSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
 	luminanceSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
 	luminanceSlider.colorBlock = ^(CCColor *color){
-		saturationAdjustment = color.red * 2.0;
+		_saturationAdjustment = color.red * 2.0;
 		[self updateColors];
 	};
 	
@@ -58,7 +57,7 @@ CCSprite *sprite;
 	[content addChild:luminanceSlider];
 	[content addChild:colorScaleSlider];
 	[content addChild:hueRotation];
-	[content addChild:sprite];
+	[content addChild:_sprite];
 	
 	return content;
 }
@@ -72,15 +71,15 @@ CCSprite *sprite;
 	
 	GLKMatrix4  colorMatrix = GLKMatrix4Identity;
 	// Multiply in the color rotation matrix, for hue rotation.
-	colorMatrix = GLKMatrix4Rotate(colorMatrix, colorRotation, 1, 1, 1);
+	colorMatrix = GLKMatrix4Rotate(colorMatrix, _colorRotation, 1, 1, 1);
 
 	// Brightness adjustments are defined as a scale operation.
-	colorMatrix = GLKMatrix4Scale(colorMatrix, colorScale, colorScale, colorScale);
+	colorMatrix = GLKMatrix4Scale(colorMatrix, _colorScale, _colorScale, _colorScale);
 	
 	// Adjust Saturation:
-	colorMatrix = GLKMatrix4Multiply(colorMatrix, GLKMatrix4MakeSaturation(saturationAdjustment));
+	colorMatrix = GLKMatrix4Multiply(colorMatrix, GLKMatrix4MakeSaturation(_saturationAdjustment));
 	
-	sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:colorMatrix];
+	_sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:colorMatrix];
 }
 
 /*
