@@ -82,7 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D3EF46F51919997E003E8B91 /* Shaders4Cocos2D.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shaders4Cocos2D.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		D3EF46FC1919997E003E8B91 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
@@ -170,7 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				D3EF496619199D82003E8B91 /* cocos2d-ios.xcodeproj */,
-				D3EF47121919997E003E8B91 /* Shaders4Cocos2D */,
+				D3EF47121919997E003E8B91 /* Cookbook */,
 				D3EF46F71919997E003E8B91 /* Frameworks */,
 				D3EF46F61919997E003E8B91 /* Products */,
 			);
@@ -179,7 +179,7 @@
 		D3EF46F61919997E003E8B91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D3EF46F51919997E003E8B91 /* Shaders4Cocos2D.app */,
+				D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -201,7 +201,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3EF47121919997E003E8B91 /* Shaders4Cocos2D */ = {
+		D3EF47121919997E003E8B91 /* Cookbook */ = {
 			isa = PBXGroup;
 			children = (
 				D3EF494B19199980003E8B91 /* Classes */,
@@ -209,7 +209,7 @@
 				D3EF47131919997E003E8B91 /* Resources */,
 				D3EF494719199980003E8B91 /* Supporting Files */,
 			);
-			path = Shaders4Cocos2D;
+			path = Cookbook;
 			sourceTree = "<group>";
 		};
 		D3EF47131919997E003E8B91 /* Resources */ = {
@@ -307,9 +307,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D3EF46F41919997E003E8B91 /* Shaders4Cocos2D */ = {
+		D3EF46F41919997E003E8B91 /* Cocos2DShaderCookbook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D3EF495A19199980003E8B91 /* Build configuration list for PBXNativeTarget "Shaders4Cocos2D" */;
+			buildConfigurationList = D3EF495A19199980003E8B91 /* Build configuration list for PBXNativeTarget "Cocos2DShaderCookbook" */;
 			buildPhases = (
 				D3EF46F11919997E003E8B91 /* Sources */,
 				D3EF46F21919997E003E8B91 /* Frameworks */,
@@ -320,9 +320,9 @@
 			dependencies = (
 				D3EF496F19199DBA003E8B91 /* PBXTargetDependency */,
 			);
-			name = Shaders4Cocos2D;
+			name = Cocos2DShaderCookbook;
 			productName = Shaders4Cocos2D;
-			productReference = D3EF46F51919997E003E8B91 /* Shaders4Cocos2D.app */;
+			productReference = D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -334,7 +334,7 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Cocos2D-iPhone";
 			};
-			buildConfigurationList = D3EF46F01919997E003E8B91 /* Build configuration list for PBXProject "Shaders4Cocos2D" */;
+			buildConfigurationList = D3EF46F01919997E003E8B91 /* Build configuration list for PBXProject "Cocos2DShaderCookbook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -352,7 +352,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				D3EF46F41919997E003E8B91 /* Shaders4Cocos2D */,
+				D3EF46F41919997E003E8B91 /* Cocos2DShaderCookbook */,
 			);
 		};
 /* End PBXProject section */
@@ -490,7 +490,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shaders4Cocos2D/Supporting Files/Prefix.pch";
+				GCC_PREFIX_HEADER = "Cookbook/Supporting Files/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Cocos2D/cocos2d\"/**",
 					"\"$(SRCROOT)/Cocos2D/external/ObjectAL\"/**",
@@ -498,14 +498,14 @@
 					"\"$(SRCROOT)/Cocos2D/external/Chipmunk/objectivec/include\"",
 					"\"$(SRCROOT)/Cocos2D/cocos2d-ui\"/**",
 				);
-				INFOPLIST_FILE = Shaders4Cocos2D/Resources/Info.plist;
+				INFOPLIST_FILE = Cookbook/Resources/Info.plist;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cocos2DShaderCookbook;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -517,7 +517,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Shaders4Cocos2D/Supporting Files/Prefix.pch";
+				GCC_PREFIX_HEADER = "Cookbook/Supporting Files/Prefix.pch";
 				HEADER_SEARCH_PATHS = (
 					"\"$(SRCROOT)/Cocos2D/cocos2d\"/**",
 					"\"$(SRCROOT)/Cocos2D/external/ObjectAL\"/**",
@@ -525,13 +525,13 @@
 					"\"$(SRCROOT)/Cocos2D/external/Chipmunk/objectivec/include\"",
 					"\"$(SRCROOT)/Cocos2D/cocos2d-ui\"/**",
 				);
-				INFOPLIST_FILE = Shaders4Cocos2D/Resources/Info.plist;
+				INFOPLIST_FILE = Cookbook/Resources/Info.plist;
 				OTHER_LDFLAGS = (
 					"-lz",
 					"-lsqlite3",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cocos2DShaderCookbook;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -540,7 +540,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D3EF46F01919997E003E8B91 /* Build configuration list for PBXProject "Shaders4Cocos2D" */ = {
+		D3EF46F01919997E003E8B91 /* Build configuration list for PBXProject "Cocos2DShaderCookbook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3EF495519199980003E8B91 /* Debug */,
@@ -549,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D3EF495A19199980003E8B91 /* Build configuration list for PBXNativeTarget "Shaders4Cocos2D" */ = {
+		D3EF495A19199980003E8B91 /* Build configuration list for PBXNativeTarget "Cocos2DShaderCookbook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D3EF495B19199980003E8B91 /* Debug */,
