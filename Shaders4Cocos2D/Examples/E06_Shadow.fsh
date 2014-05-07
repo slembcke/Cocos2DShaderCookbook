@@ -8,7 +8,7 @@ void main(){
 	vec2 shadowOffset = vec2(-0.03, -0.03);
 	float shadow = texture2D(cc_MainTexture, cc_FragTexCoord1 + shadowOffset).a;
 	
-	// Well output the shadow to the color first.
+	// We'll output the shadow to the color first.
 	gl_FragColor = vec4(vec3(0.0), shadow*shadowOpacity);
 	
 	// Blending textures isn't as trivial as using the GLSL mix() function.
