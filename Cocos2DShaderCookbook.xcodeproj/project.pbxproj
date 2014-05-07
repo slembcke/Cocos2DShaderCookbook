@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D32754F4191A94EC00865098 /* E08_Outline.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F2191A94EC00865098 /* E08_Outline.fsh */; };
+		D32754F5191A94EC00865098 /* E08_Outline.m in Sources */ = {isa = PBXBuildFile; fileRef = D32754F3191A94EC00865098 /* E08_Outline.m */; };
+		D32754F8191A973D00865098 /* E08_Outline.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D32754F7191A973D00865098 /* E08_Outline.vsh */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -82,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D32754F2191A94EC00865098 /* E08_Outline.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.fsh; sourceTree = "<group>"; };
+		D32754F3191A94EC00865098 /* E08_Outline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E08_Outline.m; sourceTree = "<group>"; };
+		D32754F7191A973D00865098 /* E08_Outline.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E08_Outline.vsh; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -300,6 +306,9 @@
 				D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */,
 				D3EFD7091919F89C00EA8874 /* E07_ColorFlash.m */,
 				D3EFD7081919F89C00EA8874 /* E07_ColorFlash.fsh */,
+				D32754F3191A94EC00865098 /* E08_Outline.m */,
+				D32754F7191A973D00865098 /* E08_Outline.vsh */,
+				D32754F2191A94EC00865098 /* E08_Outline.fsh */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -385,6 +394,7 @@
 				D3EF498C1919AE7D003E8B91 /* Interface-ipadhd.png in Resources */,
 				D3EF471E1919997E003E8B91 /* Icon.png in Resources */,
 				D3EF49931919BE55003E8B91 /* E03_SpriteDistort.fsh in Resources */,
+				D32754F4191A94EC00865098 /* E08_Outline.fsh in Resources */,
 				D3EF472C1919997E003E8B91 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				D3EF49791919A343003E8B91 /* E01_SimplestShader.fsh in Resources */,
 				D3EF471B1919997E003E8B91 /* Default-Landscape~ipad.png in Resources */,
@@ -393,6 +403,7 @@
 				D3EFD6F71919DA1700EA8874 /* E04_Grayscale.fsh in Resources */,
 				D3EF472E1919997E003E8B91 /* Icon-Small-50.png in Resources */,
 				D3EF498B1919AE7D003E8B91 /* Interface-ipadhd.plist in Resources */,
+				D32754F8191A973D00865098 /* E08_Outline.vsh in Resources */,
 				D3EF47221919997E003E8B91 /* Icon-72.png in Resources */,
 				D3EF47191919997E003E8B91 /* Default-568h@2x.png in Resources */,
 				D3EF49771919A222003E8B91 /* Logo-ipadhd.png in Resources */,
@@ -424,6 +435,7 @@
 				D3EFD70B1919F89C00EA8874 /* E07_ColorFlash.m in Sources */,
 				D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */,
 				D3EFD7001919DFA100EA8874 /* E05_Chromatic.m in Sources */,
+				D32754F5191A94EC00865098 /* E08_Outline.m in Sources */,
 				D3EF494E19199980003E8B91 /* AppDelegate.m in Sources */,
 				D3EF49971919C543003E8B91 /* ExampleBase.m in Sources */,
 			);
