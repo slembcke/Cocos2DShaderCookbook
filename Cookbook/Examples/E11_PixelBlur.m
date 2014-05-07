@@ -1,5 +1,4 @@
 #import "ExampleBase.h"
-#import "CCTextureCache.h"
 #import "CCTexture_Private.h"
 
 #define EXAMPLENAME E11_PixelBlur
@@ -13,14 +12,13 @@
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 
 	// Load the distortion texture, a noise texture which we use to determine how to offset individual fragments when we draw them.
-	CCTexture* distortion = [[CCTextureCache sharedTextureCache] addImage:@"gaussianNoise.png"];
+	CCTexture* distortion = [CCTexture textureWithFile:@"gaussianNoise.png"];
 	// Nearest neighboor interpolating to create a pixely effect out of the distortion texture.
-	ccTexParams params = {GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
-	[distortion setTexParameters:&params];
+	distortion.texParameters = &(ccTexParams){GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
 	
 	sprite.shaderUniforms[@"u_DistortionTexture"] = distortion;
 	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the image.
-	sprite.shaderUniforms[@"u_mainTextureSize"] = [NSValue valueWithCGSize:distortion.contentSizeInPixels];
+	sprite.shaderUniforms[@"u_mainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSizeInPixels];
 
 	ColorSlider *distortionSlider = [ColorSlider node];
 	distortionSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
