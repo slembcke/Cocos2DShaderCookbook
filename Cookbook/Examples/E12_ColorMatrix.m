@@ -7,14 +7,18 @@
 @interface EXAMPLENAME : ExampleBase @end
 @implementation EXAMPLENAME
 {
-	float _colorRotation = 0.0f;
-	float _colorScale = 1.0f;
-	float _saturationAdjustment = 1.0f;
+	float _colorRotation;
+	float _colorScale;
+	float _saturationAdjustment;
 	CCSprite *_sprite;
 }
 
 -(CCNode *)exampleContent
 {
+	_colorRotation = 0.0f;
+	_colorScale = 1.0f;
+	_saturationAdjustment = 1.0f;
+	
 	_sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	_sprite.shader = [CCShader shaderNamed:self.shaderName];
 
