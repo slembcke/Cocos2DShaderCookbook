@@ -4,6 +4,4 @@ Example ideas:
 * Color replacement
 * Normal mapped lighting
 * CLUT
-* Anti-aliased circle
-* SDF shader
 * Scanlines

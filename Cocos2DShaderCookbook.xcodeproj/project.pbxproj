@@ -33,6 +33,9 @@
 		D38827B1191D617F006C1A75 /* E10_Water.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D38827AE191D617F006C1A75 /* E10_Water.fsh */; };
 		D38827B2191D617F006C1A75 /* E10_Water.m in Sources */ = {isa = PBXBuildFile; fileRef = D38827AF191D617F006C1A75 /* E10_Water.m */; };
 		D38827B3191D617F006C1A75 /* E10_Water.vsh in Resources */ = {isa = PBXBuildFile; fileRef = D38827B0191D617F006C1A75 /* E10_Water.vsh */; };
+		D3A6CD441922A39A000E4134 /* E15_SignedDistanceField.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */; };
+		D3A6CD451922A39A000E4134 /* E15_SignedDistanceField.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */; };
+		D3A6CD471922B1A7000E4134 /* RGBDistanceField.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A6CD461922B1A7000E4134 /* RGBDistanceField.png */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -134,6 +137,9 @@
 		D38827AE191D617F006C1A75 /* E10_Water.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E10_Water.fsh; sourceTree = "<group>"; };
 		D38827AF191D617F006C1A75 /* E10_Water.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E10_Water.m; sourceTree = "<group>"; };
 		D38827B0191D617F006C1A75 /* E10_Water.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E10_Water.vsh; sourceTree = "<group>"; };
+		D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E15_SignedDistanceField.fsh; sourceTree = "<group>"; };
+		D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E15_SignedDistanceField.m; sourceTree = "<group>"; };
+		D3A6CD461922B1A7000E4134 /* RGBDistanceField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = RGBDistanceField.png; path = Resources/RGBDistanceField.png; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -268,8 +274,6 @@
 		D3EF47131919997E003E8B91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D33E2B2D191D86EC00FEB214 /* Flag-ipad.png */,
-				D33E2B2E191D86EC00FEB214 /* Flag-ipadhd.png */,
 				D38827A2191D60FA006C1A75 /* BisectionNoise.png */,
 				D38827A3191D60FA006C1A75 /* Caustic.png */,
 				D38827A4191D60FA006C1A75 /* Rocks-ipad.png */,
@@ -289,6 +293,9 @@
 				D3EF47161919997E003E8B91 /* Default@2x.png */,
 				D3EF47181919997E003E8B91 /* Default-568h@2x.png */,
 				D3EF471A1919997E003E8B91 /* Default-Landscape~ipad.png */,
+				D3A6CD461922B1A7000E4134 /* RGBDistanceField.png */,
+				D33E2B2D191D86EC00FEB214 /* Flag-ipad.png */,
+				D33E2B2E191D86EC00FEB214 /* Flag-ipadhd.png */,
 				D3EF47371919997E003E8B91 /* Info.plist */,
 				D3EF471C1919997E003E8B91 /* Icons */,
 			);
@@ -378,6 +385,8 @@
 				753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */,
 				D33E2B29191D866000FEB214 /* E14_Flag.m */,
 				D33E2B28191D866000FEB214 /* E14_Flag.fsh */,
+				D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */,
+				D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -487,6 +496,7 @@
 				D327550B191AE5E600865098 /* E09_Static.vsh in Resources */,
 				D3EF47221919997E003E8B91 /* Icon-72.png in Resources */,
 				D3EF47191919997E003E8B91 /* Default-568h@2x.png in Resources */,
+				D3A6CD441922A39A000E4134 /* E15_SignedDistanceField.fsh in Resources */,
 				D3EF49771919A222003E8B91 /* Logo-ipadhd.png in Resources */,
 				D3EF47341919997E003E8B91 /* Icon-Spotlight-iOS7.png in Resources */,
 				753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */,
@@ -499,6 +509,7 @@
 				D3EFD70A1919F89C00EA8874 /* E07_ColorFlash.fsh in Resources */,
 				D38827A7191D60FA006C1A75 /* Caustic.png in Resources */,
 				D3EF498A1919AE7D003E8B91 /* Interface-ipad.png in Resources */,
+				D3A6CD471922B1A7000E4134 /* RGBDistanceField.png in Resources */,
 				753B7A0A191AD9710034A6D5 /* E13_MotionBlur.fsh in Resources */,
 				D3EF498D1919AE7D003E8B91 /* slider-background-ipad.png in Resources */,
 				D3EF47361919997E003E8B91 /* Icon-Spotlight-iOS7@2x.png in Resources */,
@@ -526,6 +537,7 @@
 				D3EFD7071919E51800EA8874 /* E06_Shadow.m in Sources */,
 				D3275508191AE26A00865098 /* E09_Static.m in Sources */,
 				D3EFD7001919DFA100EA8874 /* E05_Chromatic.m in Sources */,
+				D3A6CD451922A39A000E4134 /* E15_SignedDistanceField.m in Sources */,
 				D32754F5191A94EC00865098 /* E08_Outline.m in Sources */,
 				D3EF494E19199980003E8B91 /* AppDelegate.m in Sources */,
 				D38827B2191D617F006C1A75 /* E10_Water.m in Sources */,
