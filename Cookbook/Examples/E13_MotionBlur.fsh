@@ -1,4 +1,3 @@
-
 uniform vec2 u_BlurVector;
 
 void main(){

@@ -12,18 +12,23 @@
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 
 	// Load the distortion texture, a noise texture which we use to determine how to offset individual fragments when we draw them.
-	CCTexture* distortion = [CCTexture textureWithFile:@"gaussianNoise.png"];
+	CCTexture* noise = [CCTexture textureWithFile:@"gaussianNoise.png"];
 	// Nearest neighboor interpolating to create a pixely effect out of the distortion texture.
-	distortion.texParameters = &(ccTexParams){GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
+	noise.texParameters = &(ccTexParams){GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
 	
-	sprite.shaderUniforms[@"u_DistortionTexture"] = distortion;
-	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the image.
-	sprite.shaderUniforms[@"u_mainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSizeInPixels];
+	sprite.shaderUniforms[@"u_NoiseTexture"] = noise;
+	// Pass in the content size in pixels so we can match the texture to the screen pixel for pixel.
+	sprite.shaderUniforms[@"u_NoiseTextureSize"] = [NSValue valueWithCGSize:noise.contentSizeInPixels];
+	
+	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the texture.
+	sprite.shaderUniforms[@"u_MainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSize];
 
-	ColorSlider *distortionSlider = [ColorSlider node];
-	distortionSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	distortionSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	distortionSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_DistortionSize"] = [NSNumber numberWithFloat:color.red *0.1f];};
+	ColorSlider *blurSlider = [ColorSlider node];
+	blurSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	blurSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	blurSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:0];
+	blurSlider.sliderValue = 0.5;
+	blurSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_BlurRadius"] = [NSNumber numberWithFloat:20.0*color.red];};
 	
 	ColorSlider *animationSlider = [ColorSlider node];
 	animationSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
@@ -33,11 +38,12 @@
 	
 	ColorSlider *blockSizeSlider = [ColorSlider node];
 	blockSizeSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	blockSizeSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	blockSizeSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	blockSizeSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
 	blockSizeSlider.colorBlock = ^(CCColor *color){
-		sprite.shaderUniforms[@"u_BlockSize"] = [NSNumber numberWithFloat:color.red];
+		float size = floorf(powf(2.0f, 8.0*color.red));
+		sprite.shaderUniforms[@"u_BlockSize"] = [NSNumber numberWithFloat:size];
 	};
-	
 	
 	CCLayoutBox *content = [CCLayoutBox node];
 	content.anchorPoint = ccp(0.5, 0.5);
@@ -45,7 +51,7 @@
 	
 	[content addChild:blockSizeSlider];
 	[content addChild:animationSlider];
-	[content addChild:distortionSlider];
+	[content addChild:blurSlider];
 	[content addChild:sprite];
 	
 	
