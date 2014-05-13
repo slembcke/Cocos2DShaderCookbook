@@ -1,10 +1,7 @@
 * Tableview of examples
-* Prev/next/back buttons.
 
 Example ideas:
 * Color replacement
-* Water distortion
-* Flag ripples
 * Normal mapped lighting
 * CLUT
 * Anti-aliased circle
