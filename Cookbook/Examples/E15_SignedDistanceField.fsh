@@ -29,7 +29,7 @@ void main(){
 	gl_FragColor = pmCombine(gl_FragColor, colorG*mask.g);
 	gl_FragColor = pmCombine(gl_FragColor, colorR*mask.r);
 	
-	// Now lets have some fun with signed distance fields.
+	// Now lets have some fun with signed distance fields.	
 	// First let's add an outline to the red channel color.
 	vec4 maskOutline = smoothstep(-fw, fw, distanceField + 0.1);
 	gl_FragColor = pmCombine(gl_FragColor, outlineColor*(maskOutline.r));
