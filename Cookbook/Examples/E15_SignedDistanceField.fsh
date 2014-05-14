@@ -3,31 +3,40 @@
 #endif
 
 // Premultiplied color that takes the place of red, green and blue from the SDF texture.
-const vec4 colorR = vec4(vec3(0.5), 1.0)*0.5;
-const vec4 colorG = vec4(0.6, 0.0, 0.9, 1.0);
-const vec4 colorB = vec4(0.0, 0.0, 0.0, 1.0);
+const vec4 colorR = vec4(0.92, 0.39, 0.00, 1);
+const vec4 colorG = vec4(0.98, 1.00, 0.00, 1);
+const vec4 colorB = vec4(0.00, 0.00, 0.00, 1);
+
+const vec4 outlineColor = vec4(0.60, 0.26, 0.00, 1);
+const vec4 shadowColor = vec4(0, 0, 0, 0.25);
+
+vec4 distance2D(vec2 texCoord){
+	return 2.0*texture2D(cc_MainTexture, texCoord) - 1.0;
+}
 
 vec4 pmCombine(vec4 over, vec4 under){
 	return vec4(over.rgb + (1.0 - over.a)*under.rgb, over.a + under.a - over.a*under.a);
 }
 
 void main(){
-	vec4 distanceField = 2.0*texture2D(cc_MainTexture, cc_FragTexCoord1) - 1.0;
+	vec4 distanceField = distance2D(cc_FragTexCoord1);
 	vec4 fw = fwidth(distanceField);
 	vec4 mask = smoothstep(-fw, fw, distanceField);
 	
-	// Combine all the layers.
-	gl_FragColor = colorR*mask.r;
-	gl_FragColor = pmCombine(colorG*mask.g, gl_FragColor);
+	// Combine all the layers using top down blending.
+	gl_FragColor = vec4(0);
+	gl_FragColor = pmCombine(gl_FragColor, colorB*mask.b);
+	gl_FragColor = pmCombine(gl_FragColor, colorG*mask.g);
+	gl_FragColor = pmCombine(gl_FragColor, colorR*mask.r);
 	
-	// Fun with distance fields.
-	// Lets use it to add soft shadow with an offset under the blue channel layer.
-	float shadow = 2.0*texture2D(cc_MainTexture, cc_FragTexCoord1 - vec2(0.02, 0.02)).b;
-	vec4 shadowColor = vec4(vec3(0), 0.5);
-	gl_FragColor = pmCombine(shadowColor*shadow, gl_FragColor);
+	// Now lets have some fun with signed distance fields.
+	// First let's add an outline to the red channel color.
+	vec4 maskOutline = smoothstep(-fw, fw, distanceField + 0.1);
+	gl_FragColor = pmCombine(gl_FragColor, outlineColor*(maskOutline.r));
 	
-	// Let's use it to add a little green glow too.
-	gl_FragColor.rgb += vec3(0, 1, 0)*(distanceField.b*8.0 + 1.0);
-	
-	gl_FragColor = pmCombine(colorB*mask.b, gl_FragColor);
+	// You can add soft drow shadows using SDFs too.
+	// Not a bad idea to calculate shadow texcoord in the vertex shader.
+	vec2 shadowOffset = vec2(0.02, 0.02);
+	mediump float shadowMask = 8.0*distance2D(cc_FragTexCoord1 - shadowOffset).r;
+	gl_FragColor = pmCombine(gl_FragColor, shadowColor*(shadowMask + 1.0));
 }
