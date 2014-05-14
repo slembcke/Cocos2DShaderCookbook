@@ -12,14 +12,12 @@
 	CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 	
-	ColorSlider *flashSlider = [ColorSlider node];
-	flashSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	ColorSlider *flashSlider = [ColorSlider sliderNamed:@"Flash Color"];
 	flashSlider.startColor = [CCColor colorWithRed:1 green:0 blue:0 alpha:0];
 	flashSlider.endColor = [CCColor redColor];
 	flashSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_ColorFlash"] = color;};
 		
-	ColorSlider *tintSlider = [ColorSlider node];
-	tintSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
+	ColorSlider *tintSlider = [ColorSlider sliderNamed:@"Tint Color"];
 	tintSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:0];
 	tintSlider.colorBlock = ^(CCColor *color){sprite.colorRGBA = color;};
 	

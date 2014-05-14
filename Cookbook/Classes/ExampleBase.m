@@ -33,7 +33,7 @@
 	if((self = [super init])){
 		self.color = [CCColor whiteColor];
 		
-		CCLabelTTF *exampleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:36];
+		CCLabelTTF *exampleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:18];
 		exampleLabel.color = [CCColor blackColor];
 		exampleLabel.positionType = CCPositionTypeNormalized;
 		exampleLabel.position = ccp(0.1, 0.9);
@@ -68,15 +68,15 @@
 		
 		_exampleContent = self.exampleContent;
 		_exampleContent.positionType = CCPositionTypeNormalized;
-		_exampleContent.position = ccp(5.0/6.0, 0.5);
+		_exampleContent.position = ccp(0.5, 0.5);
 //		_exampleContent.position = ccp(0.5, 0.5);
 		[self addChild:_exampleContent];
 		
-		_sourceLabel = self.sourceLabel;
-		_sourceLabel.positionType = CCPositionTypeNormalized;
-		_sourceLabel.position = ccp(2.0/6.0, 0.5);
-		_sourceLabel.anchorPoint = ccp(0.5, 0.5);
-		[self addChild:_sourceLabel];
+//		_sourceLabel = self.sourceLabel;
+//		_sourceLabel.positionType = CCPositionTypeNormalized;
+//		_sourceLabel.position = ccp(2.0/6.0, 0.5);
+//		_sourceLabel.anchorPoint = ccp(0.5, 0.5);
+//		[self addChild:_sourceLabel];
 	}
 	
 	return self;
@@ -152,25 +152,114 @@
 @end
 
 
-@implementation ColorSlider {
-	CCNodeGradient *_gradient;
+@implementation ExampleSlider
+
++(instancetype)sliderNamed:(NSString *)name
+{
+	return [[self alloc] initWithName:name];
 }
 
--(id)init
+-(id)initWithName:(NSString *)name
 {
 	CCSpriteFrame *bg = [CCSpriteFrame frameWithImageNamed:@"slider-background.png"];
 	CCSpriteFrame *handle = [CCSpriteFrame frameWithImageNamed:@"slider-handle.png"];
 	
 	if((self = [super initWithBackground:bg andHandleImage:handle])){
-		self.startColor = [CCColor whiteColor];
-		self.endColor = [CCColor blackColor];
+		self.preferredSize = CGSizeMake(100, bg.originalSize.height);
 		
 		[self setTarget:self selector:@selector(callback:)];
 		self.continuous = YES;
 		
+		CCLabelTTF *label = [CCLabelTTF labelWithString:[name stringByAppendingString:@":"] fontName:@"Helvetica" fontSize:12];
+		label.color = [CCColor blackColor];
+		label.anchorPoint = ccp(1.0, 0.5);
+		label.positionType = CCPositionTypeNormalized;
+		label.position = ccp(-0.1, 0.5);
+		label.horizontalAlignment = CCTextAlignmentRight;
+		label.verticalAlignment = CCVerticalTextAlignmentCenter;
+		
+		[self addChild:label];
+	}
+	
+	return self;
+}
+
+-(id)init
+{
+	return [self initWithName:@"UNNAMED!"];
+}
+
+@end
+
+
+@implementation FloatSlider {
+	CCLabelTTF *_valueLabel;
+}
+
+-(id)initWithName:(NSString *)name
+{
+	if((self = [super initWithName:name])){
+		self.startValue = 0.0f;
+		self.endValue = 1.0f;
+		
+		_valueLabel = [CCLabelTTF labelWithString:@"" fontName:@"Helvetica" fontSize:12];
+		_valueLabel.color = [CCColor blackColor];
+		_valueLabel.anchorPoint = ccp(0.0, 0.5);
+		_valueLabel.positionType = CCPositionTypeNormalized;
+		_valueLabel.position = ccp(1.1, 0.5);
+		_valueLabel.horizontalAlignment = CCTextAlignmentLeft;
+		_valueLabel.verticalAlignment = CCVerticalTextAlignmentCenter;
+		
+		[self addChild:_valueLabel];
+	}
+	
+	return self;
+}
+
+-(void)callback:(CCSlider *)slider
+{
+	float alpha = slider.sliderValue;
+	float value = (1.0f - alpha)*self.startValue + alpha*self.endValue;
+	_valueLabel.string = [NSString stringWithFormat:@"%.2f", value];
+	
+	if(_valueBlock) _valueBlock(value);
+}
+
+-(void)setStartValue:(float)startValue
+{
+	_startValue = startValue;
+	[self callback:self];
+}
+
+-(void)setEndValue:(float)endValue
+{
+	_endValue = endValue;
+	[self callback:self];
+}
+
+-(void)setValueBlock:(void (^)(float))valueBlock
+{
+	_valueBlock = valueBlock;
+	[self callback:self];
+}
+
+@end
+
+
+@implementation ColorSlider {
+	CCNodeGradient *_gradient;
+}
+
+-(id)initWithName:(NSString *)name
+{
+	if((self = [super initWithName:name])){
+		self.startColor = [CCColor whiteColor];
+		self.endColor = [CCColor blackColor];
+		
 		_gradient = [CCNodeGradient nodeWithColor:self.startColor fadingTo:self.endColor alongVector:ccp(-1, 0)];
 		_gradient.contentSizeType = CCSizeTypeNormalized;
 		_gradient.contentSize = CGSizeMake(1.0, 1.0);
+		
 		[self addChild:_gradient z:-1];
 	}
 	

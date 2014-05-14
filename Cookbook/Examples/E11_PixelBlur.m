@@ -23,27 +23,20 @@
 	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the texture.
 	sprite.shaderUniforms[@"u_MainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSize];
 
-	ColorSlider *blurSlider = [ColorSlider node];
-	blurSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	blurSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	blurSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:0];
+	FloatSlider *blurSlider = [FloatSlider sliderNamed:@"Radius"];
+	blurSlider.endValue = 10.0f;
 	blurSlider.sliderValue = 0.5;
-	blurSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_BlurRadius"] = [NSNumber numberWithFloat:20.0*color.red];};
+	blurSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_BlurRadius"] = @(value);};
 	
-	ColorSlider *animationSlider = [ColorSlider node];
-	animationSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	animationSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
+	FloatSlider *animationSlider = [FloatSlider sliderNamed:@"Animation"];
+	animationSlider.sliderValue = 1.0;
 	// Round the number so it's on or off. 0 will disable the animation, 1 will enable it.
-	animationSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_AnimationEnabled"] = [NSNumber numberWithFloat: roundf(color.red)];};
+	animationSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_AnimationEnabled"] = @(roundf(value));};
 	
-	ColorSlider *blockSizeSlider = [ColorSlider node];
-	blockSizeSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	blockSizeSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	blockSizeSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
-	blockSizeSlider.colorBlock = ^(CCColor *color){
-		float size = floorf(powf(2.0f, 8.0*color.red));
-		sprite.shaderUniforms[@"u_BlockSize"] = [NSNumber numberWithFloat:size];
-	};
+	FloatSlider *blockSizeSlider = [FloatSlider sliderNamed:@"BlockSize"];
+	blockSizeSlider.startValue = 1.0f;
+	blockSizeSlider.endValue = 256.0f;
+	blockSizeSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_BlockSize"] = @(floorf(value));};
 	
 	CCLayoutBox *content = [CCLayoutBox node];
 	content.anchorPoint = ccp(0.5, 0.5);

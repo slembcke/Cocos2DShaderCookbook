@@ -14,7 +14,7 @@
 -(CCNode *)exampleContent
 {
 	
-	_blurStrength = 50.0;
+	_blurStrength = 20.0;
 	
 	_sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	_sprite.shader = [CCShader shaderNamed:self.shaderName];
@@ -24,7 +24,6 @@
 	/*
 	ColorSlider *blurStrengthSlider = [ColorSlider node];
 	blurStrengthSlider.sliderValue = 0.5f;
-	blurStrengthSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
 	blurStrengthSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
 	blurStrengthSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
 	blurStrengthSlider.colorBlock = ^(CCColor *color){
@@ -48,7 +47,7 @@
 	
 	CGPoint previousPosition = _sprite.position;
 	
-	_sprite.position = ccp(5.0/6.0, 0.5);
+	_sprite.position = ccp(0.5, 0.5);
 	_sprite.position = ccpAdd(_sprite.position, ccp(sinf(self.time * 2.0) / 10.0, cosf(self.time * 3.0) / 10.0));
 	
 	// To find the amount we moved this frame, we can subtract our new position from the previous position...

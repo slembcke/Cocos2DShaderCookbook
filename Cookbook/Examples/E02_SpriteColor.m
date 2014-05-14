@@ -9,11 +9,10 @@
 	CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 	
-	ColorSlider *slider = [ColorSlider node];
+	ColorSlider *slider = [ColorSlider sliderNamed:@"Tint Color"];
 	slider.positionType = CCPositionTypeNormalized;
 	slider.position = ccp(0.5, 0.25);
 	slider.anchorPoint = ccp(0.5, 0.5);
-	slider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
 	slider.endColor = [CCColor magentaColor];
 	slider.colorBlock = ^(CCColor *color){sprite.color = color;};
 	

@@ -24,33 +24,28 @@
 
 	_sprite.shaderUniforms[@"u_ColorMatrix"] = [NSValue valueWithGLKMatrix4:GLKMatrix4Identity];
 	
-	ColorSlider *hueRotation = [ColorSlider node];
-	hueRotation.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
-	hueRotation.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	hueRotation.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
-	hueRotation.colorBlock = ^(CCColor *color){
-		_colorRotation = color.red * M_PI * 2.0;
+	FloatSlider *hueRotation = [FloatSlider sliderNamed:@"Hue Rotation"];
+	hueRotation.startValue = 0.0f;
+	hueRotation.endValue = 360.0f;
+	hueRotation.valueBlock = ^(float value){
+		_colorRotation = value*M_PI/180.0f;
 		[self updateColors];
 	};
 	
-	ColorSlider *colorScaleSlider = [ColorSlider node];
+	FloatSlider *colorScaleSlider = [FloatSlider sliderNamed:@"Exposure"];
+	colorScaleSlider.endValue = 2.0f;
 	colorScaleSlider.sliderValue = 0.5f;
-	colorScaleSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
-	colorScaleSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	colorScaleSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
-	colorScaleSlider.colorBlock = ^(CCColor *color){
-		_colorScale = color.red * 2.0;
+	colorScaleSlider.valueBlock = ^(float value){
+		_colorScale = value;
 		[self updateColors];
 	};
 	
 	
-	ColorSlider *luminanceSlider = [ColorSlider node];
-	luminanceSlider.sliderValue = 0.5f;
-	luminanceSlider.preferredSize = CGSizeMake(_sprite.contentSize.width, 32);
-	luminanceSlider.startColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	luminanceSlider.endColor = [CCColor colorWithRed:1 green:1 blue:1 alpha:1];
-	luminanceSlider.colorBlock = ^(CCColor *color){
-		_saturationAdjustment = color.red * 2.0;
+	FloatSlider *saturationSlider = [FloatSlider sliderNamed:@"Saturation"];
+	saturationSlider.endValue = 2.0f;
+	saturationSlider.sliderValue = 0.5f;
+	saturationSlider.valueBlock = ^(float value){
+		_saturationAdjustment = value;
 		[self updateColors];
 	};
 	
@@ -58,7 +53,7 @@
 	content.anchorPoint = ccp(0.5, 0.5);
 	content.direction = CCLayoutBoxDirectionVertical;
 	
-	[content addChild:luminanceSlider];
+	[content addChild:saturationSlider];
 	[content addChild:colorScaleSlider];
 	[content addChild:hueRotation];
 	[content addChild:_sprite];

@@ -13,15 +13,15 @@
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 	sprite.shaderUniforms[@"u_MainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSize];
 	
-	ColorSlider *colorSlider = [ColorSlider node];
+	ColorSlider *colorSlider = [ColorSlider sliderNamed:@"Outline Color"];
 	colorSlider.startColor = [CCColor colorWithRed:0 green:0 blue:1 alpha:1];
 	colorSlider.endColor = [CCColor colorWithRed:0 green:0 blue:1 alpha:0];
-	colorSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
 	colorSlider.colorBlock = ^(CCColor *color){sprite.colorRGBA = color;};
 	
-	ColorSlider *widthSlider = [ColorSlider node];
-	widthSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	widthSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_OutlineWidth"] = @(3.0*color.red);};
+	FloatSlider *widthSlider = [FloatSlider sliderNamed:@"Outline Width"];
+	widthSlider.endValue = 3.0;
+	widthSlider.sliderValue = 1.0;
+	widthSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_OutlineWidth"] = @(value);};
 	
 	CCLayoutBox *content = [CCLayoutBox node];
 	content.anchorPoint = ccp(0.5, 0.5);

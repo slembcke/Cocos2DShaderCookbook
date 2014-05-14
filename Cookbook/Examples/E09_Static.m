@@ -18,10 +18,9 @@
 	sprite.shaderUniforms[@"u_NoiseTexture"] = noise;
 	sprite.shaderUniforms[@"u_NoiseTextureSize"] = [NSValue valueWithCGSize:noise.contentSizeInPixels];
 
-	ColorSlider *noiseSlider = [ColorSlider node];
-	noiseSlider.preferredSize = CGSizeMake(sprite.contentSize.width, 32);
-	noiseSlider.endColor = [CCColor colorWithRed:0 green:0 blue:0 alpha:0];
-	noiseSlider.colorBlock = ^(CCColor *color){sprite.shaderUniforms[@"u_NoiseAmount"] = [NSNumber numberWithFloat:color.red];};
+	FloatSlider *noiseSlider = [FloatSlider sliderNamed:@"Amount"];
+	noiseSlider.sliderValue = 1.0;
+	noiseSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_NoiseAmount"] = [NSNumber numberWithFloat:value];};
 	
 	CCLayoutBox *content = [CCLayoutBox node];
 	content.anchorPoint = ccp(0.5, 0.5);

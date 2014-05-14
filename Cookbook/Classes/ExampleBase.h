@@ -22,7 +22,22 @@
 @end
 
 
-@interface ColorSlider : CCSlider
+@interface ExampleSlider : CCSlider
+
++(instancetype)sliderNamed:(NSString *)name;
+
+@end
+
+
+@interface FloatSlider : ExampleSlider
+
+@property(nonatomic, assign) float startValue, endValue;
+@property(nonatomic, copy) void (^valueBlock)(float value);
+
+@end
+
+
+@interface ColorSlider : ExampleSlider
 
 @property(nonatomic, strong) CCColor *startColor, *endColor;
 @property(nonatomic, copy) void (^colorBlock)(CCColor *color);
