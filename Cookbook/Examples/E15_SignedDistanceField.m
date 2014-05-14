@@ -13,7 +13,7 @@
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
 	
 	[sprite runAction:[CCActionRepeatForever actionWithAction:[CCActionSequence actions:
-		[CCActionScaleTo actionWithDuration:2 scale:8],
+		[CCActionScaleTo actionWithDuration:2 scale:4],
 		[CCActionScaleTo actionWithDuration:2 scale:1],
 		nil
 	]]];

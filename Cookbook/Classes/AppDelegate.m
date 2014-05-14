@@ -24,13 +24,13 @@
 		// Use a simplified coordinate system that is shared across devices.
 //		CCSetupScreenMode: CCScreenModeFixed,
 		// Run in portrait mode.
-//		CCSetupScreenOrientation: CCScreenOrientationPortrait,
+		CCSetupScreenOrientation: CCScreenOrientationPortrait,
 		// Run at a reduced framerate.
 //		CCSetupAnimationInterval: @(1.0/30.0),
 		// Run the fixed timestep extra fast.
 //		CCSetupFixedUpdateInterval: @(1.0/180.0),
 		// Make iPad's act like they run at a 2x content scale. (iPad retina 4x)
-//		CCSetupTabletScale2X: @(YES),
+		CCSetupTabletScale2X: @(YES),
 	}];
 	
 	return YES;
@@ -39,7 +39,7 @@
 -(CCScene *)startScene
 {
 	char *startExample = getenv("StartExample");
-	Class klass = objc_getClass(startExample) ?: ExampleBase.examples.lastObject;
+	Class klass = objc_getClass(startExample) ?: ExampleBase.examples.firstObject;
 	
 	return [klass scene];
 }

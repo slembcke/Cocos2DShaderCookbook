@@ -33,57 +33,33 @@
 	if((self = [super init])){
 		self.color = [CCColor whiteColor];
 		
-		CCLabelTTF *exampleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:18];
-		exampleLabel.color = [CCColor blackColor];
-		exampleLabel.positionType = CCPositionTypeNormalized;
-		exampleLabel.position = ccp(0.1, 0.9);
-		exampleLabel.anchorPoint = ccp(0.0, 0.5);
-		[self addChild:exampleLabel];
+		CCLabelTTF *titleLabel = [CCLabelTTF labelWithString:self.exampleName fontName:@"Helvetica" fontSize:18];
+		titleLabel.color = [CCColor blackColor];
+		titleLabel.positionType = CCPositionTypeNormalized;
+		titleLabel.position = ccp(0.5, 0.9);
+		[self addChild:titleLabel];
 		
-		// Nav buttons
-		{
-			CCButton *back = [CCButton buttonWithTitle:@"Back"];
-			back.color = [CCColor blackColor];
-			[back setTarget:self selector:@selector(back:)];
-			
-			CCButton *prev = [CCButton buttonWithTitle:@"Prev"];
-			prev.color = [CCColor blackColor];
-			[prev setTarget:self selector:@selector(prev:)];
-			
-			CCButton *next = [CCButton buttonWithTitle:@"Next"];
-			next.color = [CCColor blackColor];
-			[next setTarget:self selector:@selector(next:)];
-			
-			CCLayoutBox *buttons = [CCLayoutBox node];
-			buttons.spacing = 10.0;
-			buttons.anchorPoint = ccp(1.0, 0.5);
-			buttons.positionType = CCPositionTypeNormalized;
-			buttons.position = ccp(0.9, 0.9);
-			
-//			[buttons addChild:back];
-			[buttons addChild:prev];
-			[buttons addChild:next];
-			[self addChild:buttons];
-		}
+		CCButton *prev = [CCButton buttonWithTitle:@"Prev"];
+		prev.positionType = CCPositionTypeNormalized;
+		prev.position = ccp(0.25, 0.1);
+		prev.color = [CCColor blackColor];
+		[prev setTarget:self selector:@selector(prev:)];
+		[self addChild:prev];
+		
+		CCButton *next = [CCButton buttonWithTitle:@"Next"];
+		next.positionType = CCPositionTypeNormalized;
+		next.position = ccp(0.75, 0.1);
+		next.color = [CCColor blackColor];
+		[next setTarget:self selector:@selector(next:)];
+		[self addChild:next];
 		
 		_exampleContent = self.exampleContent;
 		_exampleContent.positionType = CCPositionTypeNormalized;
 		_exampleContent.position = ccp(0.5, 0.5);
-//		_exampleContent.position = ccp(0.5, 0.5);
 		[self addChild:_exampleContent];
-		
-//		_sourceLabel = self.sourceLabel;
-//		_sourceLabel.positionType = CCPositionTypeNormalized;
-//		_sourceLabel.position = ccp(2.0/6.0, 0.5);
-//		_sourceLabel.anchorPoint = ccp(0.5, 0.5);
-//		[self addChild:_sourceLabel];
 	}
 	
 	return self;
-}
-
--(void)back:(CCButton *)sender
-{
 }
 
 -(void)prev:(CCButton *)sender
@@ -111,7 +87,33 @@
 
 -(NSString *)exampleName
 {
-	return NSStringFromClass(self.class);
+	NSString *className = NSStringFromClass(self.class);
+	
+	NSUInteger i = 0;
+	NSMutableString *name = [NSMutableString stringWithCapacity:0];
+	
+	for(; i < className.length; i++){
+		unichar c = [className characterAtIndex:i];
+		if(c == '_'){
+			[name appendString:@": "];
+			
+			i++;
+			break;
+		} else {
+			[name appendString:[NSString stringWithCharacters:&c length:1]];
+		}
+	}
+	
+	for(; i < className.length; i++){
+		unichar c = [className characterAtIndex:i];
+		if('A' <= c && c <= 'Z'){
+			[name appendString:@" "];
+		}
+		
+		[name appendString:[NSString stringWithCharacters:&c length:1]];
+	}
+	
+	return name;
 }
 
 -(CCNode *)exampleContent
@@ -175,18 +177,11 @@
 		label.anchorPoint = ccp(1.0, 0.5);
 		label.positionType = CCPositionTypeNormalized;
 		label.position = ccp(-0.1, 0.5);
-		label.horizontalAlignment = CCTextAlignmentRight;
-		label.verticalAlignment = CCVerticalTextAlignmentCenter;
 		
 		[self addChild:label];
 	}
 	
 	return self;
-}
-
--(id)init
-{
-	return [self initWithName:@"UNNAMED!"];
 }
 
 @end
@@ -207,8 +202,6 @@
 		_valueLabel.anchorPoint = ccp(0.0, 0.5);
 		_valueLabel.positionType = CCPositionTypeNormalized;
 		_valueLabel.position = ccp(1.1, 0.5);
-		_valueLabel.horizontalAlignment = CCTextAlignmentLeft;
-		_valueLabel.verticalAlignment = CCVerticalTextAlignmentCenter;
 		
 		[self addChild:_valueLabel];
 	}

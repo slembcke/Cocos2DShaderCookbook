@@ -17,7 +17,6 @@
 @property(nonatomic, readonly) CCTime time;
 
 @property(nonatomic, readonly) CCNode *exampleContent;
-@property(nonatomic, readonly) CCLabelTTF *sourceLabel;
 
 @end
 
