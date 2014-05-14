@@ -8,7 +8,6 @@ void main(){
 	vec4 g = texture2D(cc_MainTexture, uv + vec2(wave*sin(1.3*t + uv.y*5.0), 0.0));
 	vec4 b = texture2D(cc_MainTexture, uv + vec2(wave*sin(1.6*t + uv.y*5.0), 0.0));
 	
-	// Then combine them.
-	// Average the alpha value.
+	// Combine the channels, average the alpha values.
 	gl_FragColor = vec4(r.r, g.g, b.b, (r.a + b.a + g.a)/3.0);
 }
