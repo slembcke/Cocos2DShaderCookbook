@@ -10,6 +10,7 @@ void main(){
 	
 	vec2 screen01 = (0.5*gl_Position.xy/gl_Position.w + 0.5);
 	cc_FragTexCoord2 = screen01*cc_ViewSizeInPixels/u_NoiseTextureSize;
+	
 	vec2 randomAnimatedOffset = cc_Random01.xy*u_AnimationEnabled;
-	cc_FragTexCoord2 = (uv + randomAnimatedOffset)/u_BlockSize;
+	cc_FragTexCoord2 = (cc_FragTexCoord2 + randomAnimatedOffset)/u_BlockSize;
 }
