@@ -1,4 +1,5 @@
 # E03: Sprite Distort
+![image](E03_SpriteDistort.png)
 
 Example 2 showed you how to draw a textured sprite in a shader, but that's still really basic. Now let's try something more interesting that you can only do with a shader. What happens if we change the magically calculated texture coordinate before accessing the texture?
 

@@ -1,7 +1,5 @@
-vec4 pmCombine(vec4 over, vec4 under){
-	vec3 color = over.rgb + (1.0 - over.a)*under.rgb;
-	float alpha = over.a + under.a - over.a*under.a;
-	return vec4(color, alpha);
+vec4 composite(vec4 over, vec4 under){
+	return over + (1.0 - over.a)*under;
 }
 
 void main(){
@@ -14,5 +12,5 @@ void main(){
 	const float shadowOpacity = 0.5;
 	vec4 shadowColor = vec4(vec3(0.0), shadowMask*shadowOpacity);
 	
-	gl_FragColor = pmCombine(textureColor, shadowColor);
+	gl_FragColor = composite(textureColor, shadowColor);
 }

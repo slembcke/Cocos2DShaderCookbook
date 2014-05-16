@@ -1,4 +1,5 @@
 # E02: Sprite Color
+![image](E02_SpriteColor.png)
 
 Neat, so example 1 taught us how to use shaders to draw pure red sprites so you can make the next hit game with a minimalist style. This next example is actually the default Cocos2D shader and is responsible for most of the drawing you see in Cocos2D games.
 

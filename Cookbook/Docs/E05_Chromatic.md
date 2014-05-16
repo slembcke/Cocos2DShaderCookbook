@@ -1,4 +1,5 @@
 # E05: Chromatic
+![image](E05_Chromatic.png)
 
 Here's a fun effect you see in games sometimes that makes it look like you are looking through a prism. It works by sampling the texture multiple times at slightly different places and then combines them back together.
 

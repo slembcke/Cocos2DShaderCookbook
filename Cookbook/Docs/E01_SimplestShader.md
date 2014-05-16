@@ -1,4 +1,5 @@
 # E01: Simplest Shader
+![image](E01_SimplestShader.png)
 
 There are several different kinds of OpenGL shaders, but in Cocos2D you'll only need to deal with two, vertex shaders and fragment shaders. The most interesting kind are fragment shaders or "pixel shaders"[^1]. They are also the most intuitive. It's just a tiny little program that the GPU runs once for each pixel that a sprite covers on the screen. Every `CCShader` needs both a vertex shader and a fragment shader. Cocos2D has a default vertex shader built in, so you usually don't need to write one.
 

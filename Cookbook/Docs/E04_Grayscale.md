@@ -1,4 +1,5 @@
 # E04: Grayscale
+![image](E04_Grayscale.png)
 
 Here's another simple but common shader effect.
 

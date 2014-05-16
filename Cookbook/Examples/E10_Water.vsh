@@ -7,6 +7,6 @@ void main(){
 	cc_FragTexCoord2 = cc_TexCoord2;
 	
 	vec2 distortionScroll = vec2(cc_Time[0], 0.0);
-	vec2 ssuv = (0.5*gl_Position.xy/gl_Position.w + 0.5);
-	cc_FragTexCoord2 = ssuv*cc_ViewSizeInPixels/u_NoiseTextureSize + distortionScroll;
+	vec2 screen01 = (0.5*gl_Position.xy/gl_Position.w + 0.5);
+	cc_FragTexCoord2 = screen01*cc_ViewSizeInPixels/u_NoiseTextureSize + distortionScroll;
 }

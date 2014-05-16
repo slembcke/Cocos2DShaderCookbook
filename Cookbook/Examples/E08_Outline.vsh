@@ -1,10 +1,8 @@
-const float PI_2 = 2.0*3.14159;
-
-#define SAMPLES 6
-varying vec2 v_OutlineSamples[SAMPLES];
-
 uniform vec2 u_MainTextureSize;
 uniform float u_OutlineWidth;
+
+const int SAMPLES = 6;
+varying vec2 v_OutlineSamples[SAMPLES];
 
 void main(){
 	gl_Position = cc_Position;
@@ -13,7 +11,7 @@ void main(){
 	
 	vec2 outlineSize = u_OutlineWidth/u_MainTextureSize;
 	for(int i=0; i<SAMPLES; i++){
-		float angle = PI_2*float(i)/float(SAMPLES);
+		float angle = 2.0*3.14159*float(i)/float(SAMPLES);
 		v_OutlineSamples[i] = cc_TexCoord1 + outlineSize*vec2(cos(angle), sin(angle));
 	}
 }
