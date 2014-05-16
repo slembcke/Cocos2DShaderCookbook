@@ -1,7 +1,7 @@
 #import "ExampleBase.h"
 #import "CCTexture_Private.h"
 
-#define EXAMPLENAME E11_PixelBlur
+#define EXAMPLENAME E11_Diffusion
 
 @interface EXAMPLENAME : ExampleBase @end
 @implementation EXAMPLENAME
@@ -26,7 +26,7 @@
 	FloatSlider *blurSlider = [FloatSlider sliderNamed:@"Radius"];
 	blurSlider.endValue = 10.0f;
 	blurSlider.sliderValue = 0.5;
-	blurSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_BlurRadius"] = @(value);};
+	blurSlider.valueBlock = ^(float value){sprite.shaderUniforms[@"u_Radius"] = @(value);};
 	
 	FloatSlider *animationSlider = [FloatSlider sliderNamed:@"Animation"];
 	animationSlider.sliderValue = 1.0;

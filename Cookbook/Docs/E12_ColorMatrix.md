@@ -1,4 +1,4 @@
-E12: Color Matrix
+# E12: Color Matrix
 
 ![image](E12_ColorMatrix.png)
 
@@ -17,6 +17,6 @@ You can use transformation matrices to rotate or scale sprites. Since colors are
 
 Take a look at the Objective-C code for this example to see how the matrices are made.
 
-# Exercises:
+## Exercises:
 
 * See if you can find any more interesting color matrices.

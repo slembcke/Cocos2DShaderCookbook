@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		753B79F9191A89800034A6D5 /* TODO.txt in Resources */ = {isa = PBXBuildFile; fileRef = 753B79F8191A89800034A6D5 /* TODO.txt */; };
-		753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */; };
-		753B79FD191A8D970034A6D5 /* E11_PixelBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */; };
-		753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */; };
+		753B79FC191A8D970034A6D5 /* E11_Diffusion.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B79FA191A8D970034A6D5 /* E11_Diffusion.fsh */; };
+		753B79FD191A8D970034A6D5 /* E11_Diffusion.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B79FB191A8D970034A6D5 /* E11_Diffusion.m */; };
+		753B7A03191A92840034A6D5 /* E11_Diffusion.vsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A02191A92840034A6D5 /* E11_Diffusion.vsh */; };
 		753B7A06191AC2DD0034A6D5 /* E12_ColorMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */; };
 		753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */; };
 		753B7A0A191AD9710034A6D5 /* E13_MotionBlur.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */; };
@@ -112,9 +112,9 @@
 
 /* Begin PBXFileReference section */
 		753B79F8191A89800034A6D5 /* TODO.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO.txt; sourceTree = "<group>"; };
-		753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.fsh; sourceTree = "<group>"; };
-		753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E11_PixelBlur.m; sourceTree = "<group>"; };
-		753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_PixelBlur.vsh; sourceTree = "<group>"; };
+		753B79FA191A8D970034A6D5 /* E11_Diffusion.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_Diffusion.fsh; sourceTree = "<group>"; };
+		753B79FB191A8D970034A6D5 /* E11_Diffusion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E11_Diffusion.m; sourceTree = "<group>"; };
+		753B7A02191A92840034A6D5 /* E11_Diffusion.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E11_Diffusion.vsh; sourceTree = "<group>"; };
 		753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E12_ColorMatrix.m; sourceTree = "<group>"; };
 		753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E12_ColorMatrix.fsh; sourceTree = "<group>"; };
 		753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E13_MotionBlur.fsh; sourceTree = "<group>"; };
@@ -140,6 +140,18 @@
 		D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E15_SignedDistanceField.fsh; sourceTree = "<group>"; };
 		D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E15_SignedDistanceField.m; sourceTree = "<group>"; };
 		D3A6CD4B1922FFCA000E4134 /* DistanceField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DistanceField.png; path = Resources/DistanceField.png; sourceTree = "<group>"; };
+		D3C04F7F1925E52E00632AAE /* E01_SimplestShader.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E01_SimplestShader.webarchive; sourceTree = "<group>"; };
+		D3C04F811925E72500632AAE /* E02_SpriteColor.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E02_SpriteColor.webarchive; sourceTree = "<group>"; };
+		D3C04F821925E73900632AAE /* E03_SpriteDistort.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E03_SpriteDistort.webarchive; sourceTree = "<group>"; };
+		D3C04F841925E74200632AAE /* E04_Grayscale.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E04_Grayscale.webarchive; sourceTree = "<group>"; };
+		D3C04F861925E74800632AAE /* E05_Chromatic.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E05_Chromatic.webarchive; sourceTree = "<group>"; };
+		D3C04F881925E74C00632AAE /* E06_Shadow.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E06_Shadow.webarchive; sourceTree = "<group>"; };
+		D3C04F8A1925E75100632AAE /* E07_Color Flash.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "E07_Color Flash.webarchive"; sourceTree = "<group>"; };
+		D3C04F8C1925E75600632AAE /* E08_Outline.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E08_Outline.webarchive; sourceTree = "<group>"; };
+		D3C04F8E1925E75A00632AAE /* E09_Static.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E09_Static.webarchive; sourceTree = "<group>"; };
+		D3C04F901925E75E00632AAE /* E10_Water.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E10_Water.webarchive; sourceTree = "<group>"; };
+		D3C04F921925E76500632AAE /* E11_Diffusion.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E11_Diffusion.webarchive; sourceTree = "<group>"; };
+		D3C04F941925E76900632AAE /* E12_ColorMatrix.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E12_ColorMatrix.webarchive; sourceTree = "<group>"; };
 		D3EF46F51919997E003E8B91 /* Cocos2DShaderCookbook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cocos2DShaderCookbook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3EF46F81919997E003E8B91 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		D3EF46FA1919997E003E8B91 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -224,6 +236,157 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3C04F6E1925E38C00632AAE /* E01_SimplestShader */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F7F1925E52E00632AAE /* E01_SimplestShader.webarchive */,
+				D3EF495E19199B09003E8B91 /* E01_SimplestShader.m */,
+				D3EF49781919A343003E8B91 /* E01_SimplestShader.fsh */,
+			);
+			name = E01_SimplestShader;
+			sourceTree = "<group>";
+		};
+		D3C04F6F1925E39E00632AAE /* E02_SpriteColor */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F811925E72500632AAE /* E02_SpriteColor.webarchive */,
+				D3EF497E1919ABCB003E8B91 /* E02_SpriteColor.m */,
+				D3EF497D1919ABCB003E8B91 /* E02_SpriteColor.fsh */,
+			);
+			name = E02_SpriteColor;
+			sourceTree = "<group>";
+		};
+		D3C04F701925E3AD00632AAE /* E03_SpriteDistort */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F821925E73900632AAE /* E03_SpriteDistort.webarchive */,
+				D3EF49921919BE55003E8B91 /* E03_SpriteDistort.m */,
+				D3EF49911919BE55003E8B91 /* E03_SpriteDistort.fsh */,
+			);
+			name = E03_SpriteDistort;
+			sourceTree = "<group>";
+		};
+		D3C04F711925E3BB00632AAE /* E04_Grayscale */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F841925E74200632AAE /* E04_Grayscale.webarchive */,
+				D3EFD6F61919DA1700EA8874 /* E04_Grayscale.m */,
+				D3EFD6F51919DA1700EA8874 /* E04_Grayscale.fsh */,
+			);
+			name = E04_Grayscale;
+			sourceTree = "<group>";
+		};
+		D3C04F721925E3C400632AAE /* E05_Chromatic */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F861925E74800632AAE /* E05_Chromatic.webarchive */,
+				D3EFD6FF1919DFA100EA8874 /* E05_Chromatic.m */,
+				D3EFD7021919DFA600EA8874 /* E05_Chromatic.fsh */,
+			);
+			name = E05_Chromatic;
+			sourceTree = "<group>";
+		};
+		D3C04F731925E3D300632AAE /* E06_Shadow */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F881925E74C00632AAE /* E06_Shadow.webarchive */,
+				D3EFD7051919E51800EA8874 /* E06_Shadow.m */,
+				D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */,
+			);
+			name = E06_Shadow;
+			sourceTree = "<group>";
+		};
+		D3C04F741925E3DB00632AAE /* E07_ColorFlash */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F8A1925E75100632AAE /* E07_Color Flash.webarchive */,
+				D3EFD7091919F89C00EA8874 /* E07_ColorFlash.m */,
+				D3EFD7081919F89C00EA8874 /* E07_ColorFlash.fsh */,
+			);
+			name = E07_ColorFlash;
+			sourceTree = "<group>";
+		};
+		D3C04F751925E3E400632AAE /* E08_Outline */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F8C1925E75600632AAE /* E08_Outline.webarchive */,
+				D32754F3191A94EC00865098 /* E08_Outline.m */,
+				D32754F7191A973D00865098 /* E08_Outline.vsh */,
+				D32754F2191A94EC00865098 /* E08_Outline.fsh */,
+			);
+			name = E08_Outline;
+			sourceTree = "<group>";
+		};
+		D3C04F761925E3F100632AAE /* E09_Static */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F8E1925E75A00632AAE /* E09_Static.webarchive */,
+				D3275506191AE26A00865098 /* E09_Static.m */,
+				D327550A191AE5E600865098 /* E09_Static.vsh */,
+				D3275505191AE26A00865098 /* E09_Static.fsh */,
+			);
+			name = E09_Static;
+			sourceTree = "<group>";
+		};
+		D3C04F771925E40D00632AAE /* E10_Water */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F901925E75E00632AAE /* E10_Water.webarchive */,
+				D38827AF191D617F006C1A75 /* E10_Water.m */,
+				D38827B0191D617F006C1A75 /* E10_Water.vsh */,
+				D38827AE191D617F006C1A75 /* E10_Water.fsh */,
+			);
+			name = E10_Water;
+			sourceTree = "<group>";
+		};
+		D3C04F781925E43100632AAE /* E11_Diffusion */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F921925E76500632AAE /* E11_Diffusion.webarchive */,
+				753B79FB191A8D970034A6D5 /* E11_Diffusion.m */,
+				753B7A02191A92840034A6D5 /* E11_Diffusion.vsh */,
+				753B79FA191A8D970034A6D5 /* E11_Diffusion.fsh */,
+			);
+			name = E11_Diffusion;
+			sourceTree = "<group>";
+		};
+		D3C04F791925E43E00632AAE /* E12_ColorMatrix */ = {
+			isa = PBXGroup;
+			children = (
+				D3C04F941925E76900632AAE /* E12_ColorMatrix.webarchive */,
+				753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */,
+				753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */,
+			);
+			name = E12_ColorMatrix;
+			sourceTree = "<group>";
+		};
+		D3C04F7A1925E44700632AAE /* E13_MotionBlur */ = {
+			isa = PBXGroup;
+			children = (
+				753B7A09191AD9710034A6D5 /* E13_MotionBlur.m */,
+				753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */,
+			);
+			name = E13_MotionBlur;
+			sourceTree = "<group>";
+		};
+		D3C04F7B1925E45300632AAE /* E14_Flag */ = {
+			isa = PBXGroup;
+			children = (
+				D33E2B29191D866000FEB214 /* E14_Flag.m */,
+				D33E2B28191D866000FEB214 /* E14_Flag.fsh */,
+			);
+			name = E14_Flag;
+			sourceTree = "<group>";
+		};
+		D3C04F7C1925E45D00632AAE /* E15_SignedDistanceField */ = {
+			isa = PBXGroup;
+			children = (
+				D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */,
+				D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */,
+			);
+			name = E15_SignedDistanceField;
+			sourceTree = "<group>";
+		};
 		D3EF46EC1919997E003E8B91 = {
 			isa = PBXGroup;
 			children = (
@@ -353,40 +516,21 @@
 		D3EF497319199F8A003E8B91 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				D3EF495E19199B09003E8B91 /* E01_SimplestShader.m */,
-				D3EF49781919A343003E8B91 /* E01_SimplestShader.fsh */,
-				D3EF497E1919ABCB003E8B91 /* E02_SpriteColor.m */,
-				D3EF497D1919ABCB003E8B91 /* E02_SpriteColor.fsh */,
-				D3EF49921919BE55003E8B91 /* E03_SpriteDistort.m */,
-				D3EF49911919BE55003E8B91 /* E03_SpriteDistort.fsh */,
-				D3EFD6F61919DA1700EA8874 /* E04_Grayscale.m */,
-				D3EFD6F51919DA1700EA8874 /* E04_Grayscale.fsh */,
-				D3EFD6FF1919DFA100EA8874 /* E05_Chromatic.m */,
-				D3EFD7021919DFA600EA8874 /* E05_Chromatic.fsh */,
-				D3EFD7051919E51800EA8874 /* E06_Shadow.m */,
-				D3EFD7041919E51800EA8874 /* E06_Shadow.fsh */,
-				D3EFD7091919F89C00EA8874 /* E07_ColorFlash.m */,
-				D3EFD7081919F89C00EA8874 /* E07_ColorFlash.fsh */,
-				D32754F3191A94EC00865098 /* E08_Outline.m */,
-				D32754F7191A973D00865098 /* E08_Outline.vsh */,
-				D32754F2191A94EC00865098 /* E08_Outline.fsh */,
-				D3275506191AE26A00865098 /* E09_Static.m */,
-				D327550A191AE5E600865098 /* E09_Static.vsh */,
-				D3275505191AE26A00865098 /* E09_Static.fsh */,
-				D38827AF191D617F006C1A75 /* E10_Water.m */,
-				D38827B0191D617F006C1A75 /* E10_Water.vsh */,
-				D38827AE191D617F006C1A75 /* E10_Water.fsh */,
-				753B79FB191A8D970034A6D5 /* E11_PixelBlur.m */,
-				753B7A02191A92840034A6D5 /* E11_PixelBlur.vsh */,
-				753B79FA191A8D970034A6D5 /* E11_PixelBlur.fsh */,
-				753B7A04191AC2DD0034A6D5 /* E12_ColorMatrix.m */,
-				753B7A05191AC2DD0034A6D5 /* E12_ColorMatrix.fsh */,
-				753B7A09191AD9710034A6D5 /* E13_MotionBlur.m */,
-				753B7A08191AD9710034A6D5 /* E13_MotionBlur.fsh */,
-				D33E2B29191D866000FEB214 /* E14_Flag.m */,
-				D33E2B28191D866000FEB214 /* E14_Flag.fsh */,
-				D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */,
-				D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */,
+				D3C04F6E1925E38C00632AAE /* E01_SimplestShader */,
+				D3C04F6F1925E39E00632AAE /* E02_SpriteColor */,
+				D3C04F701925E3AD00632AAE /* E03_SpriteDistort */,
+				D3C04F711925E3BB00632AAE /* E04_Grayscale */,
+				D3C04F721925E3C400632AAE /* E05_Chromatic */,
+				D3C04F731925E3D300632AAE /* E06_Shadow */,
+				D3C04F741925E3DB00632AAE /* E07_ColorFlash */,
+				D3C04F751925E3E400632AAE /* E08_Outline */,
+				D3C04F761925E3F100632AAE /* E09_Static */,
+				D3C04F771925E40D00632AAE /* E10_Water */,
+				D3C04F781925E43100632AAE /* E11_Diffusion */,
+				D3C04F791925E43E00632AAE /* E12_ColorMatrix */,
+				D3C04F7A1925E44700632AAE /* E13_MotionBlur */,
+				D3C04F7B1925E45300632AAE /* E14_Flag */,
+				D3C04F7C1925E45D00632AAE /* E15_SignedDistanceField */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -471,7 +615,7 @@
 				D3EF47321919997E003E8B91 /* Icon-Small@2x.png in Resources */,
 				D3EF47241919997E003E8B91 /* Icon-72@2x.png in Resources */,
 				D38827A6191D60FA006C1A75 /* BisectionNoise.png in Resources */,
-				753B79FC191A8D970034A6D5 /* E11_PixelBlur.fsh in Resources */,
+				753B79FC191A8D970034A6D5 /* E11_Diffusion.fsh in Resources */,
 				D38827A9191D60FA006C1A75 /* Rocks-ipadhd.png in Resources */,
 				D38827B1191D617F006C1A75 /* E10_Water.fsh in Resources */,
 				D3EF47151919997E003E8B91 /* Default.png in Resources */,
@@ -500,7 +644,7 @@
 				D3A6CD441922A39A000E4134 /* E15_SignedDistanceField.fsh in Resources */,
 				D3EF49771919A222003E8B91 /* Logo-ipadhd.png in Resources */,
 				D3EF47341919997E003E8B91 /* Icon-Spotlight-iOS7.png in Resources */,
-				753B7A03191A92840034A6D5 /* E11_PixelBlur.vsh in Resources */,
+				753B7A03191A92840034A6D5 /* E11_Diffusion.vsh in Resources */,
 				753B79F9191A89800034A6D5 /* TODO.txt in Resources */,
 				D3EF498F1919AE7D003E8B91 /* slider-handle-hd.png in Resources */,
 				D3EF47281919997E003E8B91 /* Icon-76@2x.png in Resources */,
@@ -524,7 +668,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				753B79FD191A8D970034A6D5 /* E11_PixelBlur.m in Sources */,
+				753B79FD191A8D970034A6D5 /* E11_Diffusion.m in Sources */,
 				D3EFD6F81919DA1700EA8874 /* E04_Grayscale.m in Sources */,
 				D3EF49801919ABCB003E8B91 /* E02_SpriteColor.m in Sources */,
 				D3EF49941919BE55003E8B91 /* E03_SpriteDistort.m in Sources */,
