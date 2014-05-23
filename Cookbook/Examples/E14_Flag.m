@@ -16,7 +16,6 @@
 	CCTexture *noise = [CCTexture textureWithFile:@"BisectionNoise.png"];
 	noise.texParameters = &(ccTexParams){GL_LINEAR, GL_LINEAR, GL_REPEAT, GL_REPEAT};
 	sprite.shaderUniforms[@"u_NoiseTexture"] = noise;
-	sprite.shaderUniforms[@"u_NoiseTextureSize"] = [NSValue valueWithCGSize:noise.contentSizeInPixels];
 	
 	return sprite;
 }

@@ -11,7 +11,6 @@
 {
 	CCSprite *sprite = [CCSprite spriteWithImageNamed:@"Logo.png"];
 	sprite.shader = [CCShader shaderNamed:self.shaderName];
-	sprite.shaderUniforms[@"u_MainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSize];
 	
 	ColorSlider *colorSlider = [ColorSlider sliderNamed:@"Outline Color"];
 	colorSlider.startColor = [CCColor colorWithRed:0 green:0 blue:1 alpha:1];

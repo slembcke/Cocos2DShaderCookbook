@@ -17,11 +17,6 @@
 	noise.texParameters = &(ccTexParams){GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
 	
 	sprite.shaderUniforms[@"u_NoiseTexture"] = noise;
-	// Pass in the content size in pixels so we can match the texture to the screen pixel for pixel.
-	sprite.shaderUniforms[@"u_NoiseTextureSize"] = [NSValue valueWithCGSize:noise.contentSizeInPixels];
-	
-	// We use the texture's size, so we can scale the distortion to match the aspect ratio of the texture.
-	sprite.shaderUniforms[@"u_MainTextureSize"] = [NSValue valueWithCGSize:sprite.texture.contentSize];
 
 	FloatSlider *blurSlider = [FloatSlider sliderNamed:@"Radius"];
 	blurSlider.endValue = 10.0f;

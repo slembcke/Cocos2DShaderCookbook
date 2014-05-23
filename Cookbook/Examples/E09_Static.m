@@ -16,7 +16,6 @@
 	CCTexture *noise = [CCTexture textureWithFile:@"gaussianNoise.png"];
 	noise.texParameters = &(ccTexParams){GL_NEAREST, GL_NEAREST, GL_REPEAT, GL_REPEAT};
 	sprite.shaderUniforms[@"u_NoiseTexture"] = noise;
-	sprite.shaderUniforms[@"u_NoiseTextureSize"] = [NSValue valueWithCGSize:noise.contentSizeInPixels];
 
 	FloatSlider *noiseSlider = [FloatSlider sliderNamed:@"Amount"];
 	noiseSlider.sliderValue = 1.0;
