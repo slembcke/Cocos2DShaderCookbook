@@ -36,6 +36,9 @@
 		D3A6CD441922A39A000E4134 /* E15_SignedDistanceField.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */; };
 		D3A6CD451922A39A000E4134 /* E15_SignedDistanceField.m in Sources */ = {isa = PBXBuildFile; fileRef = D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */; };
 		D3A6CD4C1922FFCA000E4134 /* DistanceField.png in Resources */ = {isa = PBXBuildFile; fileRef = D3A6CD4B1922FFCA000E4134 /* DistanceField.png */; };
+		D3BC84DB1940BAF100E98AD2 /* Fog.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3BC84DA1940BAF100E98AD2 /* Fog.plist */; };
+		D3BC84DF1940BAFF00E98AD2 /* E16_MetaParticles.fsh in Resources */ = {isa = PBXBuildFile; fileRef = D3BC84DD1940BAFF00E98AD2 /* E16_MetaParticles.fsh */; };
+		D3BC84E01940BAFF00E98AD2 /* E16_MetaParticles.m in Sources */ = {isa = PBXBuildFile; fileRef = D3BC84DE1940BAFF00E98AD2 /* E16_MetaParticles.m */; };
 		D3EF46F91919997E003E8B91 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46F81919997E003E8B91 /* QuartzCore.framework */; };
 		D3EF46FB1919997E003E8B91 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FA1919997E003E8B91 /* OpenGLES.framework */; };
 		D3EF46FD1919997E003E8B91 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3EF46FC1919997E003E8B91 /* OpenAL.framework */; };
@@ -140,6 +143,9 @@
 		D3A6CD421922A39A000E4134 /* E15_SignedDistanceField.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E15_SignedDistanceField.fsh; sourceTree = "<group>"; };
 		D3A6CD431922A39A000E4134 /* E15_SignedDistanceField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E15_SignedDistanceField.m; sourceTree = "<group>"; };
 		D3A6CD4B1922FFCA000E4134 /* DistanceField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DistanceField.png; path = Resources/DistanceField.png; sourceTree = "<group>"; };
+		D3BC84DA1940BAF100E98AD2 /* Fog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Fog.plist; path = Resources/Fog.plist; sourceTree = "<group>"; };
+		D3BC84DD1940BAFF00E98AD2 /* E16_MetaParticles.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = E16_MetaParticles.fsh; sourceTree = "<group>"; };
+		D3BC84DE1940BAFF00E98AD2 /* E16_MetaParticles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = E16_MetaParticles.m; sourceTree = "<group>"; };
 		D3C04F7F1925E52E00632AAE /* E01_SimplestShader.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E01_SimplestShader.webarchive; sourceTree = "<group>"; };
 		D3C04F811925E72500632AAE /* E02_SpriteColor.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E02_SpriteColor.webarchive; sourceTree = "<group>"; };
 		D3C04F821925E73900632AAE /* E03_SpriteDistort.webarchive */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = E03_SpriteDistort.webarchive; sourceTree = "<group>"; };
@@ -236,6 +242,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D3BC84E11940BB0800E98AD2 /* E16_MetaParticles */ = {
+			isa = PBXGroup;
+			children = (
+				D3BC84DE1940BAFF00E98AD2 /* E16_MetaParticles.m */,
+				D3BC84DD1940BAFF00E98AD2 /* E16_MetaParticles.fsh */,
+			);
+			name = E16_MetaParticles;
+			sourceTree = "<group>";
+		};
 		D3C04F6E1925E38C00632AAE /* E01_SimplestShader */ = {
 			isa = PBXGroup;
 			children = (
@@ -437,6 +452,7 @@
 		D3EF47131919997E003E8B91 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3BC84DA1940BAF100E98AD2 /* Fog.plist */,
 				D3A6CD4B1922FFCA000E4134 /* DistanceField.png */,
 				D38827A2191D60FA006C1A75 /* BisectionNoise.png */,
 				D38827A3191D60FA006C1A75 /* Caustic.png */,
@@ -531,6 +547,7 @@
 				D3C04F7A1925E44700632AAE /* E13_MotionBlur */,
 				D3C04F7B1925E45300632AAE /* E14_Flag */,
 				D3C04F7C1925E45D00632AAE /* E15_SignedDistanceField */,
+				D3BC84E11940BB0800E98AD2 /* E16_MetaParticles */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -606,6 +623,7 @@
 				D3EF47171919997E003E8B91 /* Default@2x.png in Resources */,
 				753B7A07191AC2DD0034A6D5 /* E12_ColorMatrix.fsh in Resources */,
 				D3EF472A1919997E003E8B91 /* Icon-120.png in Resources */,
+				D3BC84DF1940BAFF00E98AD2 /* E16_MetaParticles.fsh in Resources */,
 				D3EF49901919AE7D003E8B91 /* slider-handle-ipadhd.png in Resources */,
 				D3EFD7031919DFA600EA8874 /* E05_Chromatic.fsh in Resources */,
 				D3EF49891919AE7D003E8B91 /* Interface-hd.plist in Resources */,
@@ -626,6 +644,7 @@
 				D3275507191AE26A00865098 /* E09_Static.fsh in Resources */,
 				D3EF472C1919997E003E8B91 /* Icon-iPad-Spotlight-iOS7@2x.png in Resources */,
 				D3EF49791919A343003E8B91 /* E01_SimplestShader.fsh in Resources */,
+				D3BC84DB1940BAF100E98AD2 /* Fog.plist in Resources */,
 				D38827A8191D60FA006C1A75 /* Rocks-hd.png in Resources */,
 				D3EF471B1919997E003E8B91 /* Default-Landscape~ipad.png in Resources */,
 				D3EF47301919997E003E8B91 /* Icon-Small.png in Resources */,
@@ -685,6 +704,7 @@
 				D32754F5191A94EC00865098 /* E08_Outline.m in Sources */,
 				D3EF494E19199980003E8B91 /* AppDelegate.m in Sources */,
 				D38827B2191D617F006C1A75 /* E10_Water.m in Sources */,
+				D3BC84E01940BAFF00E98AD2 /* E16_MetaParticles.m in Sources */,
 				D3EF49971919C543003E8B91 /* ExampleBase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
